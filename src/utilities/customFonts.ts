@@ -1,4 +1,4 @@
-import { Space_Grotesk, Habibi } from "next/font/google";
+import { Space_Grotesk, Libre_Baskerville } from "next/font/google";
 
 export const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
@@ -7,9 +7,9 @@ export const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-export const habibi = Habibi({
-  weight: ["400"],
-  style: ["normal"],
+export const libre = Libre_Baskerville({
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
 });

@@ -1,5 +1,5 @@
 "use client";
-import { habibi, spaceGrotesk } from "@/utilities/customFonts";
+import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import Nav from "@/_components/EnviadoNav";
 import Image from "next/image";
 import ArrowImage from "/public/assets/arrow.png";
@@ -20,17 +20,17 @@ export default function Home(props: Props) {
             className={`w-full flex flex-col items-center text-white font-bold`}
           >
             <h1
-              className={`w-full ${habibi.className} font-extrabold text-5xl md:w-[50%] md:text-7xl  text-start`}
+              className={`w-full ${libre.className} font-extrabold text-5xl md:w-[50%] md:text-7xl  text-start`}
             >
               Your 360º{" "}
             </h1>
             <h1
-              className={`w-full ${habibi.className} text-5xl md:w-[50%] md:text-7xl  text-end`}
+              className={`w-full ${libre.className} text-5xl md:w-[50%] md:text-7xl  text-end`}
             >
               marketing
             </h1>
             <h1
-              className={`w-full ${habibi.className} text-5xl md:w-[50%] md:text-7xl  text-center`}
+              className={`w-full ${libre.className} text-5xl md:w-[50%] md:text-7xl  text-center`}
             >
               solution
             </h1>
