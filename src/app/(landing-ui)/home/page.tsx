@@ -5,15 +5,11 @@ import Image from "next/image";
 import ArrowImage from "/public/assets/arrow.png";
 import ButtonImage from "/public/assets/ButtonImage.png";
 
-type Props = {};
-
-export default function Home(props: Props) {
+export default function Home() {
   return (
     <div className={``}>
-      <Nav />
-
       <div
-        className={`relative min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-20`}
+        className={`min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-20`}
       >
         <div className={`w-full px-10 py-5 flex justify-center items-center`}>
           <div

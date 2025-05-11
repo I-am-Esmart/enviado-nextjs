@@ -1,5 +1,7 @@
 "use client";
 
+import EnviadoFooter from "@/_components/EnviadoFooter";
+import EnviadoNav from "@/_components/EnviadoNav";
 import MobileMenu from "@/_components/MobileMenu";
 import { useState } from "react";
 
@@ -8,23 +10,15 @@ export default function LandingUiLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isNavDropdownOpen, setIsNavDropdownOpen] = useState(false);
-
-  const handleClickLink = () => {
-    if (isNavDropdownOpen === true) {
-      setIsNavDropdownOpen(false);
-    } else {
-      setIsNavDropdownOpen(true);
-    }
-  };
-
   return (
-    <>
-      <div className={`w-full`}>{children}</div>;
-      <MobileMenu
-        handleClickLink={handleClickLink}
-        isNavDropdownOpen={isNavDropdownOpen}
-      />
-    </>
+    <section className={``}>
+      <div className={`relative w-full`}>
+        <EnviadoNav />
+        <div className={``}>{children}</div>
+        <EnviadoFooter />
+      </div>
+
+      <MobileMenu />
+    </section>
   );
 }

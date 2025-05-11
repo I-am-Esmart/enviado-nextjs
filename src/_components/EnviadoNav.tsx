@@ -1,16 +1,22 @@
 "use client";
+import { useUserContext } from "@/context/UserContext";
+
 import { RiMenu3Fill } from "react-icons/ri";
 import Link from "next/link";
 import Logo from "/public/assets/EnviadoLogo.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { LiaTimesSolid } from "react-icons/lia";
 
 type NavProps = {};
 
 const EnviadoNav = (props: NavProps) => {
   const [isScrolledY, setIsScrolledY] = useState<boolean>(false);
   const pathName = usePathname();
+
+  const { handleOPenNavDropdown, isNavDropdownOpen, handleCloseNavDropdown } =
+    useUserContext();
 
   const links = [
     {
@@ -101,10 +107,17 @@ const EnviadoNav = (props: NavProps) => {
       </div>
 
       <div
+        onClick={
+          isNavDropdownOpen ? handleCloseNavDropdown : handleOPenNavDropdown
+        }
         className={`md:hidden flex item-center space-x-2 cursor-pointer text-white bg-[#93002A] py-2 px-4`}
       >
         <span className={`flex item-center justify-center text-lg`}>Menu</span>
-        <RiMenu3Fill className={`flex item-center justify-center mt-2`} />
+        {isNavDropdownOpen ? (
+          <LiaTimesSolid className={`flex item-center justify-center mt-2`} />
+        ) : (
+          <RiMenu3Fill className={`flex item-center justify-center mt-2`} />
+        )}
       </div>
     </nav>
   );
