@@ -65,7 +65,7 @@ export default function MobileMenu() {
               href={link.linkRoute}
               className={`text-lg ${
                 path === link.linkRoute
-                  ? "text-[#E4B34E] font-semibold"
+                  ? "text-[#93002A] font-semibold"
                   : "text-[#FFFFFF] font-medium"
               }`}
               onClick={handleCloseNavDropdown}
@@ -73,16 +73,6 @@ export default function MobileMenu() {
               {link.linkName}
             </Link>
           ))}
-        </div>
-
-        <div className={``}>
-          <Link
-            href={"/sign-up"}
-            className={`flex items-center justify-center text-base py-2 px-5 rounded-lg bg-[#E4B34E] text-[#FFFFFF]`}
-            onClick={handleCloseNavDropdown}
-          >
-            Sign Up
-          </Link>
         </div>
       </div>
     </motion.div>

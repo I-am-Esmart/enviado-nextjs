@@ -33,25 +33,35 @@ const EnviadoFooter = () => {
 
   return (
     <footer
-      className={`${spaceGrotesk.className} bg-[#0D0909] h-[80vh] w-full text-white`}
+      className={`${spaceGrotesk.className} overflow-hidden bg-[#0D0909] min-h-[80vh] w-full text-white p-4 flex flex-col justify-between`}
     >
-      <div className={`p-8 w-[70%] flex justify-between text-[1rem]`}>
+      <div className={`w-[70%] md:w-[40%] flex justify-between text-[1rem]`}>
         <div className={``}>
-          <p>About Us</p>
-          <p>Our Work</p>
+          <p>
+            <Link href={"/about-us"}>About Us </Link>
+          </p>
+          <p>
+            <Link href={"/our-work"}>Our Work</Link>
+          </p>
         </div>
         <div className={``}>
-          <p>About Us</p>
-          <p>Our Work</p>
+          <p>
+            <Link href={"/service"}>Service</Link>
+          </p>
+          <p>
+            <Link href={"/contact-us"}>Contact Us</Link>
+          </p>
         </div>
       </div>
 
-      <div className={`${libre.className} text-[5rem] font-[700] italic`}>
+      <div
+        className={`${libre.className}  text-[5rem] md:text-[10rem] font-[700] italic`}
+      >
         <p>Enviado</p>
       </div>
 
-      <div className={`w-full border`}>
-        <div className={`w-[70%] p-4 flex gap-5 `}>
+      <div className={`w-full`}>
+        <div className={`w-[70%] flex gap-5 `}>
           {socialLinks.map((link) => (
             <div className={` `} key={link.id}>
               <Link key={link.id} href={""} className={``}>
@@ -65,16 +75,20 @@ const EnviadoFooter = () => {
       </div>
 
       <div
-        className={`${libre.className} mt-25 p-4 w-full flex justify-between text-[1rem] font-[500]`}
+        className={`${libre.className} w-full flex flex-col justify-between gap-4 mt-auto`}
       >
-        <p>Privacy Policy</p>
-        <p>Terms and conditions</p>
-      </div>
+        <hr />
 
-      <div
-        className={`${libre.className} px-4 w-full flex justify-between text-[1rem] font-[500]`}
-      >
-        <p>© 2024 Enviado Global Brand Company. All Rights Reserved. </p>
+        <div className={`flex flex-col gap-4`}>
+          <div className="w-full flex justify-between  text-[1rem] font-[500]">
+            <p>Privacy Policy</p>
+            <p>Terms and conditions</p>
+          </div>
+
+          <div className="w-full flex justify-center text-[1rem] font-[500]">
+            <p>© 2024 Enviado Global Brand Company. All Rights Reserved.</p>
+          </div>
+        </div>
       </div>
     </footer>
   );
