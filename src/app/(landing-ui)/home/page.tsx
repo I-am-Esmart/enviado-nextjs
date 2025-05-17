@@ -96,22 +96,26 @@ export default function Home() {
       <div className={`min-h-screen w-full flex flex-col items-center mt-5`}>
         <div className="w-[90%] flex flex-col items-center">
           <div
-            className={`${spaceGrotesk.className} text-center text-[#970029] text-[1rem] font-[400]`}
+            className={`${spaceGrotesk.className} text-center text-[#970029] text-[1rem] leading-[-1rem] font-[400]`}
           >
-            <p className={`text-[1rem] font-[400]`}>Boldly turning your</p>
-            <h2 className={`text-[2.2rem] font-[700]`}>vision into reality</h2>
+            <p className={`text-[1rem] md:text-[2rem] font-[400]`}>
+              Boldly turning your
+            </p>
+            <h2 className={`text-[2.2rem] md:text-[3.2rem] font-[700]`}>
+              vision into reality
+            </h2>
 
             <Image
               src={FourBoxesImage}
               alt=""
               width={0}
               height={0}
-              className={``}
+              className={`border`}
             />
           </div>
 
           <div
-            className={`${libre.className} w-full font-[700] text-[#000000] text-[2rem] mt-5`}
+            className={`${libre.className} w-full font-[700] text-[#000000] text-[2rem] md:text-[3rem] mt-5`}
           >
             <h2>What We </h2>
             <h2>
@@ -124,7 +128,7 @@ export default function Home() {
               {whatWeDoItems.map(({ id, letter, title, desc }, index) => (
                 <div
                   key={id}
-                  className={`flex-none w-[80%] bg-[#faeceb] p-6 mt-10 transition-all duration-300 ${
+                  className={`flex-none w-[80%] md:w-[30%] bg-[#faeceb] p-6 md:p-12   mt-10 transition-all duration-300 ${
                     index % 2 === 0 ? "rotate-[-10deg]" : "translate-y-20"
                   }`}
                 >
