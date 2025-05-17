@@ -1,36 +1,32 @@
 "use client";
-import { habibi, spaceGrotesk } from "@/utilities/customFonts";
+import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import Nav from "@/_components/EnviadoNav";
 import Image from "next/image";
 import ArrowImage from "/public/assets/arrow.png";
 import ButtonImage from "/public/assets/ButtonImage.png";
 
-type Props = {};
-
-export default function Home(props: Props) {
+export default function Home() {
   return (
     <div className={``}>
-      <Nav />
-
       <div
-        className={`relative min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-20`}
+        className={`min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-20`}
       >
         <div className={`w-full px-10 py-5 flex justify-center items-center`}>
           <div
             className={`w-full flex flex-col items-center text-white font-bold`}
           >
             <h1
-              className={`w-full ${habibi.className} font-extrabold text-5xl md:w-[50%] md:text-7xl  text-start`}
+              className={`w-full ${libre.className} font-extrabold text-5xl md:w-[50%] md:text-7xl  text-start`}
             >
               Your 360º{" "}
             </h1>
             <h1
-              className={`w-full ${habibi.className} text-5xl md:w-[50%] md:text-7xl  text-end`}
+              className={`w-full ${libre.className} text-5xl md:w-[50%] md:text-7xl  text-end`}
             >
               marketing
             </h1>
             <h1
-              className={`w-full ${habibi.className} text-5xl md:w-[50%] md:text-7xl  text-center`}
+              className={`w-full ${libre.className} text-5xl md:w-[50%] md:text-7xl  text-center`}
             >
               solution
             </h1>

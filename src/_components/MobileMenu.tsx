@@ -3,12 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as motion from "motion/react-client";
-import { useEffect, useState } from "react";
-
-type MobileMenuProps = {
-  isNavDropdownOpen: boolean;
-  handleClickLink: () => void;
-};
+import { useUserContext } from "@/context/UserContext";
 
 const transition = {
   duration: 0.5,
@@ -17,11 +12,10 @@ const transition = {
 const initial = { left: 0 };
 const animate = { left: "-100vw" };
 
-export default function MobileMenu({
-  isNavDropdownOpen,
-  handleClickLink,
-}: MobileMenuProps) {
+export default function MobileMenu() {
   const path = usePathname();
+
+  const { handleCloseNavDropdown, isNavDropdownOpen } = useUserContext();
 
   const links = [
     {
@@ -71,24 +65,14 @@ export default function MobileMenu({
               href={link.linkRoute}
               className={`text-lg ${
                 path === link.linkRoute
-                  ? "text-[#E4B34E] font-semibold"
+                  ? "text-[#93002A] font-semibold"
                   : "text-[#FFFFFF] font-medium"
               }`}
-              onClick={handleClickLink}
+              onClick={handleCloseNavDropdown}
             >
               {link.linkName}
             </Link>
           ))}
-        </div>
-
-        <div className={``}>
-          <Link
-            href={"/sign-up"}
-            className={`flex items-center justify-center text-base py-2 px-5 rounded-lg bg-[#E4B34E] text-[#FFFFFF]`}
-            onClick={handleClickLink}
-          >
-            Sign Up
-          </Link>
         </div>
       </div>
     </motion.div>
