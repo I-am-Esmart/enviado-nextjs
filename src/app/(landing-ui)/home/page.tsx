@@ -5,6 +5,11 @@ import Image from "next/image";
 import ArrowImage from "/public/assets/arrow.png";
 import ButtonImage from "/public/assets/ButtonImage.png";
 import FourBoxesImage from "/public/assets/FourBoxesImage.png";
+import { FaArrowRightLong } from "react-icons/fa6";
+import DeepspaceImage from "/public/assets/Deepspace.png";
+import EridianImage from "/public/assets/Eridian.png";
+import LolaImage from "/public/assets/Lola.png";
+import WebDesignImage from "/public/assets/WebDesignImage.png";
 
 export default function Home() {
   const whatWeDoItems = [
@@ -31,6 +36,30 @@ export default function Home() {
       letter: "a",
       title: "AMPLIFY",
       desc: "Through targeted amplification strategies, we ensure your message reaches the right audience at the right time, expanding your brand’s presence and driving sustained growth.",
+    },
+  ];
+
+  const workExamples = [
+    {
+      id: 1,
+      image: DeepspaceImage,
+      title: "DEEPSPACE",
+      desc: "A Bold Leap For Advanced Manufacturing In Africa",
+      webdesignImage: WebDesignImage,
+    },
+    {
+      id: 2,
+      image: EridianImage,
+      title: "Eridian",
+      desc: "A Higher Calling: Building Ventures With Purpose",
+      webdesignImage: WebDesignImage,
+    },
+    {
+      id: 3,
+      image: LolaImage,
+      title: "LOLA",
+      desc: "Banking Nigeria’s Unbanked Grassroots",
+      webdesignImage: WebDesignImage,
     },
   ];
 
@@ -96,7 +125,7 @@ export default function Home() {
       <div className={`min-h-screen w-full flex flex-col items-center mt-5`}>
         <div className="w-[90%] flex flex-col items-center">
           <div
-            className={`${spaceGrotesk.className} text-center text-[#970029] text-[1rem] leading-[-1rem] font-[400]`}
+            className={`${spaceGrotesk.className} leading-[3rem] text-center text-[#970029] text-[1rem] leading-[-1rem] font-[400]`}
           >
             <p className={`text-[1rem] md:text-[2rem] font-[400]`}>
               Boldly turning your
@@ -110,7 +139,7 @@ export default function Home() {
               alt=""
               width={0}
               height={0}
-              className={`border`}
+              className={` `}
             />
           </div>
 
@@ -147,6 +176,77 @@ export default function Home() {
           </div>
 
           <div className={``}></div>
+
+          <div className={`w-full`}>
+            <div className={``}>
+              <h2
+                className={`${libre.className} leading-[3rem] uppercase font-[700] text-[2rem]  text-[#970029] md:leading-[5rem] md:text-[4rem] `}
+              >
+                Talking <br /> about results
+              </h2>
+            </div>
+
+            <div
+              className={`${libre.className} w-full flex justify-between items-center`}
+            >
+              <button
+                className={`flex items-center gap-2 bg-[#000000] text-white font-[700] p-3 md:p-4`}
+              >
+                <span>Our Work</span> <FaArrowRightLong />
+              </button>
+              <p className={`hidden md:block w-1/3 font-[400] text-[1rem]`}>
+                We do great work!!! See below some of the work we have done and
+                landmark we have achieved.
+              </p>
+            </div>
+          </div>
+
+          <div className={``}>
+            {workExamples.map(
+              ({ id, image, title, desc, webdesignImage }, index) => (
+                <div
+                  key={id}
+                  className={`w-full flex flex-col items-center justify-between gap-2 mt-10`}
+                >
+                  <div className={`w-full`}>
+                    <Image
+                      src={image}
+                      alt=""
+                      width={0}
+                      height={0}
+                      className={`w-full h-full object-cover`}
+                    />
+                  </div>
+
+                  <div
+                    className={`w-full flex flex-col md:flex-row md:gap-10 items-center justify-center`}
+                  >
+                    <div className={` flex flex-col`}>
+                      <h2
+                        className={`${libre.className} text-[#FF0000] font-[700] text-[2rem]`}
+                      >
+                        {title}
+                      </h2>
+                      <p
+                        className={`${spaceGrotesk.className} font-[400] text-[1rem] `}
+                      >
+                        {desc}
+                      </p>
+                    </div>
+
+                    <Image
+                      src={webdesignImage}
+                      alt=""
+                      width={0}
+                      height={0}
+                      className={`w-full h-full object-cover`}
+                    />
+                  </div>
+                </div>
+              )
+            )}
+          </div>
+
           <div className={``}></div>
         </div>
       </div>
