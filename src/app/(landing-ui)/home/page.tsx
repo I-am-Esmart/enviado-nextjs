@@ -1,6 +1,6 @@
 "use client";
-import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import Nav from "@/_components/EnviadoNav";
+import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import Image from "next/image";
 import ArrowImage from "/public/assets/arrow.png";
 import ButtonImage from "/public/assets/ButtonImage.png";
@@ -68,7 +68,7 @@ export default function Home() {
       <div
         className={`min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-20`}
       >
-        <div className={`w-full px-10 py-5 flex justify-center items-center`}>
+        <div className={`w-full px-10 py-10 flex justify-center items-center`}>
           <div
             className={`w-full flex flex-col items-center text-white font-bold`}
           >
@@ -92,6 +92,15 @@ export default function Home() {
             >
               Starts here
             </span>
+            <div className={`w-[50%] flex items-center justify-end`}>
+              <Image
+                src={ArrowImage}
+                alt="arrow image"
+                width={0}
+                height={0}
+                className={`w-[7rem] rotate-[20deg] md:rotate-0 md:w-[12rem] md:text-start ml-2 mt-2 `}
+              />
+            </div>
           </div>
         </div>
 
@@ -107,7 +116,7 @@ export default function Home() {
           </div>
           <div className={`w-full flex items-center justify-end py-4`}>
             <button
-              className={`w-2/4 mr-0 ${spaceGrotesk.className} cursor-pointer flex items-center justify-center gap-2 bg-[#FFFFFF] text-[#970029] text-[1rem] font-normal p-[0.8rem]`}
+              className={`w-2/4 ${spaceGrotesk.className} cursor-pointer flex items-center justify-center gap-2 bg-[#FFFFFF] text-[#970029] text-[1rem] font-normal p-[0.8rem]`}
             >
               <Image
                 src={ButtonImage}
@@ -152,7 +161,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="w-full overflow-x-auto scrollbar-hide ">
+          <div className="w-full overflow-x-auto custom-scrollbar ">
             <div className="flex gap-12 py-8 px-4">
               {whatWeDoItems.map(({ id, letter, title, desc }, index) => (
                 <div
