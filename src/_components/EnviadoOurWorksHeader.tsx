@@ -62,6 +62,11 @@ export default function EnviadoOurWorksHeader() {
             </div>
             <div className="w-full flex items-center justify-end py-4">
               <button
+                onClick={() =>
+                  document
+                    .getElementById("links")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
                 className={`w-2/4 ${spaceGrotesk.className} flex items-center justify-center gap-2 bg-white text-[#970029] text-[1rem] font-normal p-[0.8rem]`}
               >
                 <Image src={ButtonImage} alt="arrow" width={0} height={0} />
@@ -72,7 +77,10 @@ export default function EnviadoOurWorksHeader() {
         </div>
       </div>
 
-      <div className={`w-full flex  items-center justify-center mt-15`}>
+      <div
+        id="links"
+        className={`w-full flex  items-center justify-center mt-15`}
+      >
         <div className={`w-full   flex flex-wrap items-center justify-center`}>
           {links.map((link, index) => (
             <Link
