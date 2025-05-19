@@ -1,13 +1,15 @@
 "use client";
 import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import Image from "next/image";
-
+import { FaArrowRightLong } from "react-icons/fa6";
 import DeepspaceImage from "/public/assets/Deepspace.png";
 import EridianImage from "/public/assets/Eridian.png";
 import LolaImage from "/public/assets/Lola.png";
 import WebDesignImage from "/public/assets/WebDesignImage.png";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import WineKite from "/public/assets/WineKite.png";
+
 export default function Home() {
   const pathName = usePathname();
 
@@ -45,88 +47,6 @@ export default function Home() {
 
   return (
     <div className={``}>
-      {/* <div
-        className={`min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-20`}
-      >
-        <div
-          className={`w-full h-screen px-10 py-5 flex flex-col justify-center items-center`}
-        >
-          <div className={`w-full flex justify-center items-center`}>
-            <div
-              className={`w-full flex flex-col gap-10 text-white font-bold uppercase`}
-            >
-              <h1
-                className={`w-full ${libre.className} font-extrabold text-5xl md:w-[50%] md:text-7xl`}
-              >
-                Our 360º
-              </h1>
-              <h1
-                className={`w-full ${libre.className} text-5xl md:w-[50%] md:text-7xl`}
-              >
-                results
-              </h1>
-            </div>
-          </div>
-          <div className={`w-[50%] flex items-center justify-end`}>
-            <Image
-              src={ArrowImage}
-              alt="arrow image"
-              width={0}
-              height={0}
-              className={`w-[7rem] rotate-[20deg] md:rotate-0 md:w-[12rem] md:text-start ml-2 `}
-            />
-          </div>
-
-          <div
-            className={`w-full mt-2 py-5 flex flex-col-reverse text-[1rem]  md:flex-row md:items-start `}
-          >
-            <div
-              className={`w-full ${spaceGrotesk.className} text-white text-[1.2rem] font-[400] `}
-            >
-              <p>
-                We do great work!!! See below some of the work we have done and
-                landmark we have achieved.
-              </p>
-            </div>
-            <div className={`w-full flex items-center justify-end py-4`}>
-              <button
-                className={`w-2/4 mr-0 ${spaceGrotesk.className} cursor-pointer flex items-center justify-center gap-2 bg-[#FFFFFF] text-[#970029] text-[1rem] font-normal p-[0.8rem]`}
-              >
-                <Image
-                  src={ButtonImage}
-                  alt="arrow"
-                  width={0}
-                  height={0}
-                  className={``}
-                />
-                Explore
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      {/* <div className={`w-full flex items-center justify-center mt-15`}>
-        <div
-          className={`w-[80%] md:w-1/2 flex flex-wrap items-center justify-between`}
-        >
-          {links.map(({ name, route }) => (
-            <p key={name} className={`w-full md:w-auto`}>
-              <Link
-                href={route}
-                className={`p-2 cursor-pointer ${
-                  pathName === route
-                    ? "text-red-600 font-bold border-b-2 border-red-600"
-                    : "text-white"
-                }`}
-              >
-                {name}
-              </Link>
-            </p>
-          ))}
-        </div>
-      </div> */}
-
       <div className={`min-h-screen w-full flex flex-col items-center mt-5`}>
         <div className="w-[90%] flex flex-col items-center">
           <div className={``}></div>
@@ -179,6 +99,40 @@ export default function Home() {
 
           <div className={``}></div>
         </div>
+
+        {/* <div
+          className={`w-full bg-[#FFE1E1] mt-10 flex flex-col items-center justify-center`}
+        >
+          <div
+            className={`w-full md:w-[60%] p-10 flex flex-col md:flex-row items-center justify-between gap-9 md:gap-15`}
+          >
+            <div className={``}>
+              <Image
+                src={WineKite}
+                alt="kite image"
+                width={0}
+                height={0}
+                className={`w-[10rem] md:w-[15rem] h-auto`}
+              />
+            </div>
+
+            <div className={` flex flex-col items-center justify-center`}>
+              <Link href={"/contact-us"}>
+                <button
+                  className={`${libre.className} bg-[#000000] flex items-center justify-center gap-2 p-4 text-[#FFFFFF]`}
+                >
+                  <span>Send a Message </span> <FaArrowRightLong />
+                </button>
+              </Link>
+              <h2
+                className={`${libre.className} text-[#000000] font-[600] text-[2rem] md:text-[3rem]`}
+              >
+                Let’s Work with
+                <span className={`uppercase text-[#B0001E]`}> YOU</span>
+              </h2>
+            </div>
+          </div>
+        </div> */}
       </div>
     </div>
   );
