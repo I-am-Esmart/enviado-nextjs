@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <EnviadoOurWorksHeader />
-      {children}
+      <div className={``}>{children}</div>
       <EnviadoCTA />
     </>
   );

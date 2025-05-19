@@ -210,7 +210,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={``}>
+          <div className={`mb-10`}>
             {workExamples.map(
               ({ id, image, title, desc, webdesignImage }, index) => (
                 <div
@@ -259,6 +259,34 @@ export default function Home() {
           <div className={``}></div>
         </div>
       </div>
+
+      <section
+        className={`${spaceGrotesk.className} relative w-full h-screen px-20`}
+      >
+        <div className={`w-full h-[32%]`}>
+          <h1
+            className={`w-full text-6xl text-left text-[#000000] font-bold opacity-20`}
+          >
+            IDEAS
+          </h1>
+        </div>
+
+        <div className={`w-full h-[32%]`}>
+          <h1
+            className={`w-full text-6xl text-center text-[#000000] font-bold opacity-20`}
+          >
+            CREATES
+          </h1>
+        </div>
+
+        <div className={`w-full h-[32%]`}>
+          <h1
+            className={`w-full text-6xl text-right text-[#000000] font-bold opacity-20`}
+          >
+            RESULTS
+          </h1>
+        </div>
+      </section>
     </div>
   );
 }
