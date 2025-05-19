@@ -2,14 +2,8 @@
 import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import Nav from "@/_components/EnviadoNav";
 import Image from "next/image";
-import ArrowImage from "/public/assets/arrow.png";
+import ArrowImage from "/public/assets/Arrow.png";
 import ButtonImage from "/public/assets/ButtonImage.png";
-import FourBoxesImage from "/public/assets/FourBoxesImage.png";
-import { FaArrowRightLong } from "react-icons/fa6";
-import DeepspaceImage from "/public/assets/Deepspace.png";
-import EridianImage from "/public/assets/Eridian.png";
-import LolaImage from "/public/assets/Lola.png";
-import WebDesignImage from "/public/assets/WebDesignImage.png";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
