@@ -1,17 +1,24 @@
 "use client";
 import { libre, spaceGrotesk } from "@/utilities/customFonts";
-import Nav from "@/_components/EnviadoNav";
 import Image from "next/image";
-import ArrowImage from "/public/assets/arrow.png";
-import ButtonImage from "/public/assets/ButtonImage.png";
-import FourBoxesImage from "/public/assets/FourBoxesImage.png";
-import { FaArrowRightLong } from "react-icons/fa6";
+
 import DeepspaceImage from "/public/assets/Deepspace.png";
 import EridianImage from "/public/assets/Eridian.png";
 import LolaImage from "/public/assets/Lola.png";
 import WebDesignImage from "/public/assets/WebDesignImage.png";
-
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 export default function Home() {
+  const pathName = usePathname();
+
+  const links = [
+    { name: "All Projects", route: "/our-works" },
+    { name: "Branding", route: "/our-works/branding" },
+    { name: "Marketing", route: "/our-works/marketing" },
+    { name: "Motion Design", route: "/our-works/motion-design" },
+    { name: "Graphics", route: "/our-works/graphics" },
+  ];
+
   const workExamples = [
     {
       id: 1,
@@ -38,7 +45,7 @@ export default function Home() {
 
   return (
     <div className={``}>
-      <div
+      {/* <div
         className={`min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-20`}
       >
         <div
@@ -97,7 +104,28 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      {/* <div className={`w-full flex items-center justify-center mt-15`}>
+        <div
+          className={`w-[80%] md:w-1/2 flex flex-wrap items-center justify-between`}
+        >
+          {links.map(({ name, route }) => (
+            <p key={name} className={`w-full md:w-auto`}>
+              <Link
+                href={route}
+                className={`p-2 cursor-pointer ${
+                  pathName === route
+                    ? "text-red-600 font-bold border-b-2 border-red-600"
+                    : "text-white"
+                }`}
+              >
+                {name}
+              </Link>
+            </p>
+          ))}
+        </div>
+      </div> */}
 
       <div className={`min-h-screen w-full flex flex-col items-center mt-5`}>
         <div className="w-[90%] flex flex-col items-center">
