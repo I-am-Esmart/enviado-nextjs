@@ -10,8 +10,14 @@ import DeepspaceImage from "/public/assets/Deepspace.png";
 import EridianImage from "/public/assets/Eridian.png";
 import LolaImage from "/public/assets/Lola.png";
 import WebDesignImage from "/public/assets/WebDesignImage.png";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  // const [isScrolledY, setIsScrolledY] = useState<boolean>(false);
+  const [ideas, setIdeas] = useState<boolean>(false);
+  const [creates, setCreates] = useState<boolean>(false);
+  const [results, setResults] = useState<boolean>(false);
+
   const whatWeDoItems = [
     {
       id: 1,
@@ -62,6 +68,36 @@ export default function Home() {
       webdesignImage: WebDesignImage,
     },
   ];
+
+  // 3490, 3714, 3920
+
+  const handleScroll = () => {
+    if (window.scrollY === 3490) {
+      console.log("scrolled", window.scrollY);
+      setIdeas(true);
+      setCreates(false);
+      setResults(false);
+    } else if (window.scrollY === 3714) {
+      setIdeas(false);
+      setCreates(true);
+      setResults(false);
+      // setIsScrolledY(true);
+    } else if (window.scrollY === 3920) {
+      setIdeas(false);
+      setCreates(false);
+      setResults(true);
+
+      // setIsScrolledY(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className={``}>
@@ -261,11 +297,13 @@ export default function Home() {
       </div>
 
       <section
-        className={`${spaceGrotesk.className} relative w-full h-screen px-20`}
+        className={`${spaceGrotesk.className} relative w-full h-screen px-40`}
       >
         <div className={`w-full h-[32%]`}>
           <h1
-            className={`w-full text-6xl text-left text-[#000000] font-bold opacity-20`}
+            className={`w-full text-6xl text-left text-[#000000] font-bold ${
+              ideas ? "opacity-100" : "opacity-20"
+            }  `}
           >
             IDEAS
           </h1>
@@ -273,7 +311,9 @@ export default function Home() {
 
         <div className={`w-full h-[32%]`}>
           <h1
-            className={`w-full text-6xl text-center text-[#000000] font-bold opacity-20`}
+            className={`w-full text-6xl text-center text-[#93002A] font-bold ${
+              creates ? "opacity-100" : "opacity-20"
+            } `}
           >
             CREATES
           </h1>
@@ -281,11 +321,20 @@ export default function Home() {
 
         <div className={`w-full h-[32%]`}>
           <h1
-            className={`w-full text-6xl text-right text-[#000000] font-bold opacity-20`}
+            className={`w-full text-6xl text-right text-[#000000] font-bold ${
+              results ? "opacity-100" : "opacity-20"
+            } `}
           >
             RESULTS
           </h1>
         </div>
+
+        <div
+          className={`absolute top-10 right-40 rotate-45 md:w-[200px] md:h-[200px] bg-[#020CB1]`}
+        ></div>
+        <div
+          className={`absolute bottom-30 left-40 rotate-45 md:w-[200px] md:h-[200px] bg-[#F7DE67]`}
+        ></div>
       </section>
     </div>
   );
