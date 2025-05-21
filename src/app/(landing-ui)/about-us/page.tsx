@@ -2,8 +2,10 @@ import EnviadoCTA from "@/_components/EnviadoCTA";
 import Nav from "@/_components/EnviadoNav";
 import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import JohnDoeImage from "/public/assets/JohnDoe.jpg";
-import { div } from "motion/react-client";
+import { desc, div } from "motion/react-client";
 import Image from "next/image";
+import DeepspaceImage from "/public/assets/Deepspace.png";
+import EridianImage from "/public/assets/Eridian.png";
 
 type Props = {};
 
@@ -37,6 +39,24 @@ export default function AboutUs(props: Props) {
     { element1: "Motion Graphics", element2: "Motion Graphics" },
     { element1: "Motion Graphics", element2: "Motion Graphics" },
     { element1: "Motion Graphics", element2: "Motion Graphics" },
+  ];
+
+  const projects = [
+    {
+      name: "Deepspace",
+      image: DeepspaceImage,
+      description: "A Bold Leap For Advanced Manufacturing In Africa.",
+    },
+    {
+      name: "Eridian",
+      image: EridianImage,
+      description: "A Higher Calling: Building Ventures With Purpose.",
+    },
+    {
+      name: "Eridian",
+      image: EridianImage,
+      description: "A Higher Calling: Building Ventures With Purpose.",
+    },
   ];
 
   return (
@@ -128,6 +148,61 @@ export default function AboutUs(props: Props) {
                 <p>{item.element2}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={`w-full min-h-screen`}>
+        <div className={`w-[90%] md:w-[80%] mx-auto flex flex-col gap-10`}>
+          <div className={`w-3/4 md:w-1/2 `}>
+            <h1
+              className={`${libre.className} text-[#93002A] font-[700] text-[2rem] md:text-[3rem]`}
+            >
+              A process that delivers
+            </h1>
+            <p
+              className={`${spaceGrotesk.className} mt-5 font-[400] text-[1rem]`}
+            >
+              We don't just come up with ideas, products or experiences that
+              push boundaries and challenge the status quo– we also bring in the
+              results! We don't just come up with ideas, products or experiences
+              that push boundaries and challenge the status quo we also bring in
+              the results!
+            </p>
+          </div>
+
+          <div className={``}>
+            <h1
+              className={`${libre.className} text-[#000000] font-[700] text-[2rem] md:text-[3rem]`}
+            >
+              Explore our solutions
+            </h1>
+
+            <div className={`w-full flex flex-col md:flex-row gap-5 mt-5`}>
+              {projects.map((project, index) => (
+                <div key={index} className={`w-full flex flex-col`}>
+                  <div className={`w-full h-[200px]`}>
+                    <Image
+                      src={project.image}
+                      alt="project image"
+                      width={0}
+                      height={0}
+                      className={`w-full h-full object-cover`}
+                    />
+                  </div>
+                  <h1
+                    className={`${libre.className} text-[#000000] font-[700] text-[1.5rem]`}
+                  >
+                    {project.name}
+                  </h1>
+                  <p
+                    className={`${spaceGrotesk.className} font-[400] text-[1rem]`}
+                  >
+                    {project.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
