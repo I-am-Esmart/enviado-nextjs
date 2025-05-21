@@ -96,9 +96,9 @@ export default function AboutUs(props: Props) {
                     className={`w-full object-cover`}
                   />
                 </div>
-                <div className="">
+                <div className={`px-1`}>
                   <p className={`text-[1.2rem] font-[300]`}>{member.name}</p>
-                  <p className={`text-[1rem] font-[300]`}>{member.role}</p>
+                  <p className={`text-[0.8rem] font-[300]`}>{member.role}</p>
                 </div>
               </div>
             ))}
@@ -109,16 +109,22 @@ export default function AboutUs(props: Props) {
       <section className={`w-full min-h-screen`}>
         <div className={`w-[90%] md:w-[80%] mx-auto flex flex-col gap-10`}>
           <h1
-            className={`${libre.className} font-[700] text-[2rem] md:text-[3rem]`}
+            className={`${libre.className} font-[700] text-[#000000] text-[2rem] md:text-[3rem]`}
           >
             Our Expertise
           </h1>
 
-          <div className={`w-full`}>
+          <div className={`relative w-full flex flex-col gap-10`}>
+            <div
+              className={`hidden md:block absolute w-[130px] h-[163px] bg-[#E4554B] left-1/2  -top-10 -translate-x-1/2`}
+            ></div>
             {expertise.map((item, index) => (
-              <div key={index} className={`flex align-center justify-between `}>
+              <div
+                key={index}
+                className={` flex align-center justify-between gap-5 ${spaceGrotesk.className} text-base md:text-2xl font-[400]`}
+              >
                 <p>{item.element1}</p>
-                <div className={`w-1/3 text-[#00000033]`}></div>
+                <div className={`w-1/3 h-0.5 bg-[#00000033]`}></div>
                 <p>{item.element2}</p>
               </div>
             ))}
