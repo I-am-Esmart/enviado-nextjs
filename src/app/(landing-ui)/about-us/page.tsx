@@ -6,6 +6,9 @@ import { desc, div } from "motion/react-client";
 import Image from "next/image";
 import DeepspaceImage from "/public/assets/Deepspace.png";
 import EridianImage from "/public/assets/Eridian.png";
+import Person1Image from "/public/assets/Person1.png";
+import SolomonPassport from "/public/assets/SolomonPassport.png";
+import Person3Image from "/public/assets/Person3.png";
 
 type Props = {};
 
@@ -14,22 +17,17 @@ export default function AboutUs(props: Props) {
     {
       name: "John Doe",
       role: "CEO",
-      image: JohnDoeImage,
+      image: Person1Image,
     },
     {
       name: "Jane Smith",
       role: "CTO",
-      image: JohnDoeImage,
+      image: SolomonPassport,
     },
     {
       name: "Alice Johnson",
       role: "Designer",
-      image: JohnDoeImage,
-    },
-    {
-      name: "Bob Brown",
-      role: "Developer",
-      image: JohnDoeImage,
+      image: Person3Image,
     },
   ];
 
@@ -161,7 +159,7 @@ export default function AboutUs(props: Props) {
               A process that delivers
             </h1>
             <p
-              className={`${spaceGrotesk.className} mt-5 font-[400] text-[1rem]`}
+              className={`${spaceGrotesk.className} mt-5 font-[400] text-[1.2rem]`}
             >
               We don't just come up with ideas, products or experiences that
               push boundaries and challenge the status quo– we also bring in the
@@ -191,12 +189,12 @@ export default function AboutUs(props: Props) {
                     />
                   </div>
                   <h1
-                    className={`${libre.className} text-[#000000] font-[700] text-[1.5rem]`}
+                    className={`${libre.className} text-[#000000] font-[700] text-[1.5rem] text-[#FF0000]`}
                   >
                     {project.name}
                   </h1>
                   <p
-                    className={`${spaceGrotesk.className} font-[400] text-[1rem]`}
+                    className={`${spaceGrotesk.className} font-[400] text-[1rem] `}
                   >
                     {project.description}
                   </p>

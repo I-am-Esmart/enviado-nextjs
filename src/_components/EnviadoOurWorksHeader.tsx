@@ -20,7 +20,7 @@ export default function EnviadoOurWorksHeader() {
 
   return (
     <>
-      <div className="min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-20">
+      <div className="min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-10">
         <div className="w-full h-screen px-10 py-5 flex flex-col justify-center items-center">
           <div className="w-full flex justify-center items-center">
             <div className="w-full flex flex-col gap-10 text-white font-bold uppercase">
