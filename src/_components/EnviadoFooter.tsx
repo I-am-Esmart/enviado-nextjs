@@ -86,7 +86,10 @@ const EnviadoFooter = () => {
           </div>
 
           <div className="w-full flex justify-center text-[1rem] font-[500]">
-            <p>© 2024 Enviado Global Brand Company. All Rights Reserved.</p>
+            <p>
+              © {new Date().getFullYear()} Enviado Global Brand Company. All
+              Rights Reserved.
+            </p>
           </div>
         </div>
       </div>

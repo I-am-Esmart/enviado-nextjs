@@ -8,7 +8,7 @@ const workDetails = [
   {
     id: "deepspace",
     client: "deepspace",
-    sector: "Marketing (Advertising Agency",
+    sector: "Marketing (Advertising Agency)",
     year: "2024",
     scope:
       "Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo. Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo.Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo. . Mauris facilisis eget varius diam amet purus mattis at turpis. commodo.",
@@ -17,7 +17,7 @@ const workDetails = [
   {
     id: "eridian",
     client: "deepspace",
-    sector: "Marketing (Advertising Agency",
+    sector: "Marketing (Advertising Agency)",
     year: "2024",
     scope:
       "Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo. Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo.Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo. . Mauris facilisis eget varius diam amet purus mattis at turpis. commodo.",

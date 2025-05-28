@@ -2,7 +2,7 @@
 import Nav from "@/_components/EnviadoNav";
 import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import Image from "next/image";
-import ArrowImage from "/public/assets/arrow.png";
+import ArrowImage from "/public/assets/Arrow.png";
 import ButtonImage from "/public/assets/ButtonImage.png";
 import FourBoxesImage from "/public/assets/FourBoxesImage.png";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -10,7 +10,12 @@ import DeepspaceImage from "/public/assets/Deepspace.png";
 import EridianImage from "/public/assets/Eridian.png";
 import LolaImage from "/public/assets/Lola.png";
 import WebDesignImage from "/public/assets/WebDesignImage.png";
+import CircleImage from "/public/assets/CircleImage.png";
+import CoiledArrow from "/public/assets/CoiledArrow.png";
+import ArrowUp from "/public/assets/ArrowUp.png";
+
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   // const [isScrolledY, setIsScrolledY] = useState<boolean>(false);
@@ -72,22 +77,27 @@ export default function Home() {
   // 3490, 3714, 3920
 
   const handleScroll = () => {
-    if (window.scrollY === 3490) {
-      console.log("scrolled", window.scrollY);
+    const scrollY = window.scrollY;
+    console.log("scrolled", window.scrollY);
+    if (scrollY >= 3070 && scrollY <= 3265) {
       setIdeas(true);
       setCreates(false);
       setResults(false);
-    } else if (window.scrollY === 3714) {
+    } else if (scrollY >= 3267 && scrollY <= 3476) {
       setIdeas(false);
       setCreates(true);
       setResults(false);
       // setIsScrolledY(true);
-    } else if (window.scrollY === 3920) {
+    } else if (scrollY >= 3478 && scrollY <= 3678) {
       setIdeas(false);
       setCreates(false);
       setResults(true);
 
       // setIsScrolledY(false);
+    } else {
+      setIdeas(false);
+      setCreates(false);
+      setResults(false);
     }
   };
 
@@ -330,11 +340,97 @@ export default function Home() {
         </div>
 
         <div
-          className={`absolute top-10 right-40 rotate-45 md:w-[200px] md:h-[200px] bg-[#020CB1]`}
+          className={`absolute top-10 right-40 rotate-45 md:w-[200px] md:h-[200px] transition-all duration-75 ease-in ${
+            creates ? "bg-[#FF3F56] rotate-180" : "bg-[#020CB1]"
+          } `}
         ></div>
         <div
-          className={`absolute bottom-30 left-40 rotate-45 md:w-[200px] md:h-[200px] bg-[#F7DE67]`}
+          className={`absolute bottom-30 left-40 rotate-45 md:w-[200px] md:h-[200px] transition-all duration-75 ease-in ${
+            creates ? "bg-[#007AFF] rotate-270 " : "bg-[#F7DE67]"
+          }  `}
         ></div>
+      </section>
+
+      <section
+        className={`${spaceGrotesk.className} relative w-full h-screen flex flex-col gap-20 px-40`}
+      >
+        <div className={`w-full flex align-center justify-between`}>
+          <div className={``}>
+            <h1
+              className={`${libre.className} font-[700] text-7xl text-[#000000]`}
+            >
+              5k+
+            </h1>
+            <p
+              className={`${spaceGrotesk.className} font-[400] text-2xl text-[#000000]`}
+            >
+              Brands
+            </p>
+          </div>
+
+          <div>
+            <Image src={CircleImage} alt="circle" width={0} height={0} />
+          </div>
+        </div>
+
+        <div
+          className={`w-2/3 flex align-center justify-between ml-auto items-end`}
+        >
+          <div className={``}>
+            <h1
+              className={`${libre.className} font-[700] text-7xl text-[#D83E36]`}
+            >
+              100k
+            </h1>
+            <p
+              className={`${spaceGrotesk.className} font-[400] text-2xl text-[#000000]`}
+            >
+              People reached
+            </p>
+          </div>
+          <button
+            className={` bg-[#000000] text-[#FFFFFF] p-4 flex flex-col md:flex-row items-center justify-center gap-2 font-[700]`}
+          >
+            <Link href={"/contact-us"}>
+              <p>Send a Message </p>
+            </Link>
+            <div>
+              <FaArrowRightLong />
+            </div>
+          </button>
+        </div>
+
+        <div className={`w-1/2 ml-auto text-right`}>
+          <h1
+            className={`${libre.className} font-[700] text-7xl text-[#000000]`}
+          >
+            Let’s Work with <span className={`text-[#D83E36]`}>YOU</span>
+          </h1>
+        </div>
+
+        <div className={`absolute top-30`}>
+          <Image
+            src={CoiledArrow}
+            alt="coiled arrow"
+            width={0}
+            height={0}
+            className={`bottom-10 top-10 border`}
+          />
+          <Image
+            src={ArrowUp}
+            alt="coiled arrow"
+            width={0}
+            height={0}
+            className={`hidden md:block`}
+          />
+          <Image
+            src={ArrowUp}
+            alt="coiled arrow"
+            width={0}
+            height={0}
+            className={`hidden md:block`}
+          />
+        </div>
       </section>
     </div>
   );
