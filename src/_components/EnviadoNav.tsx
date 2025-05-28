@@ -46,14 +46,6 @@ const EnviadoNav = (props: NavProps) => {
     },
   ];
 
-  //   const handleClickNavIcon = () => {
-  //     if (isNavDropdownOpen === true) {
-  //       handleDeactivateDropdown();
-  //     } else {
-  //       handleActivateDropdown();
-  //     }
-  //   };
-
   const handleScroll = () => {
     if (window.scrollY > 500) {
       setIsScrolledY(true);
