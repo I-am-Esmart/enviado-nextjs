@@ -4,6 +4,7 @@ import EridianImage from "/public/assets/Eridian.png";
 import LolaImage from "/public/assets/Lola.png";
 import Image from "next/image";
 
+// Mock project data
 const workDetails = [
   {
     id: "deepspace",
@@ -11,7 +12,7 @@ const workDetails = [
     sector: "Marketing (Advertising Agency)",
     year: "2024",
     scope:
-      "Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo. Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo.Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo. . Mauris facilisis eget varius diam amet purus mattis at turpis. commodo.",
+      "Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo...",
     image: DeepspaceImage,
   },
   {
@@ -20,25 +21,27 @@ const workDetails = [
     sector: "Marketing (Advertising Agency)",
     year: "2024",
     scope:
-      "Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo. Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo.Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo. . Mauris facilisis eget varius diam amet purus mattis at turpis. commodo.",
+      "Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo...",
     image: EridianImage,
   },
   {
     id: "lola",
     client: "deepspace",
-    sector: "Marketing (Advertising Agency",
+    sector: "Marketing (Advertising Agency)",
     year: "2024",
     scope:
-      "Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo. Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo.Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo. . Mauris facilisis eget varius diam amet purus mattis at turpis. commodo.",
+      "Lorem ipsum dolor sit amet consectetur. Mauris facilisis eget varius diam amet purus mattis at turpis. Porttitor cursus massa mauris erat commodo...",
     image: LolaImage,
   },
 ];
 
-export default function ProjectPage({
-  params,
-}: {
-  params: { projectId: string };
-}) {
+type ProjectPageProps = {
+  params: {
+    projectId: string;
+  };
+};
+
+export default function ProjectPage({ params }: ProjectPageProps) {
   const project = workDetails.find((p) => p.id === params.projectId);
 
   if (!project) return notFound();
