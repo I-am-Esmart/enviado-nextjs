@@ -1,6 +1,11 @@
 "use client";
+import { motion } from "framer-motion";
 import Nav from "@/_components/EnviadoNav";
+// import Slider from "slick-carousel";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { libre, spaceGrotesk } from "@/utilities/customFonts";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import ArrowImage from "/public/assets/Arrow.png";
 import ButtonImage from "/public/assets/ButtonImage.png";
@@ -13,8 +18,6 @@ import WebDesignImage from "/public/assets/WebDesignImage.png";
 import CircleImage from "/public/assets/CircleImage.png";
 import CoiledArrow from "/public/assets/CoiledArrow.png";
 import ArrowUp from "/public/assets/ArrowUp.png";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function Home() {
@@ -74,8 +77,7 @@ export default function Home() {
     },
   ];
 
-  // 3490, 3714, 3920
-
+  //scroll function to handle the scroll event
   const handleScroll = () => {
     const scrollY = window.scrollY;
     console.log("scrolled", window.scrollY);
@@ -109,6 +111,20 @@ export default function Home() {
     };
   }, []);
 
+  // caroulsel autoplay settings
+  // function AutoPlay() {
+  //   const settings = {
+  //     dots: true,
+  //     infinite: true,
+  //     slidesToShow: 3,
+  //     slidesToScroll: 1,
+  //     autoplay: true,
+  //     speed: 2000,
+  //     autoplaySpeed: 2000,
+  //     cssEase: "linear",
+  //   };
+  // }
+
   return (
     <div className={``}>
       <div
@@ -118,21 +134,27 @@ export default function Home() {
           <div
             className={`w-full flex flex-col items-center text-white font-bold`}
           >
-            <h1
+            <motion.h1
+              initial={{ x: -200, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
               className={`w-full ${libre.className} font-extrabold text-5xl md:w-[50%] md:text-7xl  text-start`}
             >
               Your 360º{" "}
-            </h1>
+            </motion.h1>
             <h1
               className={`w-full ${libre.className} text-5xl md:w-[50%] md:text-7xl  text-end`}
             >
               marketing
             </h1>
-            <h1
+            <motion.h1
+              initial={{ x: 200, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
               className={`w-full ${libre.className} text-5xl md:w-[50%] md:text-7xl  text-center`}
             >
               solution
-            </h1>
+            </motion.h1>
             <span
               className={`${spaceGrotesk.className}text-sm -rotate-20 mt-3`}
             >
@@ -212,7 +234,7 @@ export default function Home() {
               {whatWeDoItems.map(({ id, letter, title, desc }, index) => (
                 <div
                   key={id}
-                  className={`flex-none w-[80%] md:w-[30%] bg-[#faeceb] p-6 md:p-12   mt-10 transition-all duration-300 ${
+                  className={`flex-none w-[80%] md:w-[30%] bg-[#faeceb] p-6 md:p-12 mt-10 transition-all duration-300 ${
                     index % 2 === 0 ? "rotate-[-10deg]" : "translate-y-20"
                   }`}
                 >
@@ -231,6 +253,51 @@ export default function Home() {
           </div>
 
           <div className={``}></div>
+
+          <section
+            className={`${spaceGrotesk.className} relative w-full h-screen mt-10 px-20 md:px-40`}
+          >
+            <div className={`w-full h-[32%]`}>
+              <h1
+                className={`w-full text-6xl text-left text-[#000000] font-bold ${
+                  ideas ? "opacity-100" : "opacity-20"
+                }  `}
+              >
+                IDEAS
+              </h1>
+            </div>
+
+            <div className={`w-full h-[32%]`}>
+              <h1
+                className={`w-full text-6xl text-center text-[#93002A] font-bold ${
+                  creates ? "opacity-100" : "opacity-20"
+                } `}
+              >
+                CREATES
+              </h1>
+            </div>
+
+            <div className={`w-full h-[32%]`}>
+              <h1
+                className={`w-full text-6xl text-right text-[#000000] font-bold ${
+                  results ? "opacity-100" : "opacity-20"
+                } `}
+              >
+                RESULTS
+              </h1>
+            </div>
+
+            <div
+              className={`absolute top-10 right-40 rotate-45 md:w-[200px] md:h-[200px] transition-all duration-75 ease-in ${
+                creates ? "bg-[#FF3F56] rotate-180" : "bg-[#020CB1]"
+              } `}
+            ></div>
+            <div
+              className={`absolute bottom-30 left-40 rotate-45 md:w-[200px] md:h-[200px] transition-all duration-75 ease-in ${
+                creates ? "bg-[#007AFF] rotate-270 " : "bg-[#F7DE67]"
+              }  `}
+            ></div>
+          </section>
 
           <div className={`w-full`}>
             <div className={``}>
@@ -307,89 +374,50 @@ export default function Home() {
       </div>
 
       <section
-        className={`${spaceGrotesk.className} relative w-full h-screen px-40`}
+        className={`${spaceGrotesk.className} relative w-full h-screen flex flex-col gap-20 px-10 md:px-40`}
       >
-        <div className={`w-full h-[32%]`}>
-          <h1
-            className={`w-full text-6xl text-left text-[#000000] font-bold ${
-              ideas ? "opacity-100" : "opacity-20"
-            }  `}
-          >
-            IDEAS
-          </h1>
-        </div>
-
-        <div className={`w-full h-[32%]`}>
-          <h1
-            className={`w-full text-6xl text-center text-[#93002A] font-bold ${
-              creates ? "opacity-100" : "opacity-20"
-            } `}
-          >
-            CREATES
-          </h1>
-        </div>
-
-        <div className={`w-full h-[32%]`}>
-          <h1
-            className={`w-full text-6xl text-right text-[#000000] font-bold ${
-              results ? "opacity-100" : "opacity-20"
-            } `}
-          >
-            RESULTS
-          </h1>
-        </div>
-
-        <div
-          className={`absolute top-10 right-40 rotate-45 md:w-[200px] md:h-[200px] transition-all duration-75 ease-in ${
-            creates ? "bg-[#FF3F56] rotate-180" : "bg-[#020CB1]"
-          } `}
-        ></div>
-        <div
-          className={`absolute bottom-30 left-40 rotate-45 md:w-[200px] md:h-[200px] transition-all duration-75 ease-in ${
-            creates ? "bg-[#007AFF] rotate-270 " : "bg-[#F7DE67]"
-          }  `}
-        ></div>
-      </section>
-
-      <section
-        className={`${spaceGrotesk.className} relative w-full h-screen flex flex-col gap-20 px-40`}
-      >
-        <div className={`w-full flex align-center justify-between`}>
+        <div className={`w-full flex  align-center justify-between`}>
           <div className={``}>
             <h1
-              className={`${libre.className} font-[700] text-7xl text-[#000000]`}
+              className={`${libre.className} font-[700] text-5xl md:text-7xl text-[#000000]`}
             >
               5k+
             </h1>
             <p
-              className={`${spaceGrotesk.className} font-[400] text-2xl text-[#000000]`}
+              className={`${spaceGrotesk.className} font-[400] text-[1rem] md:text-2xl text-[#000000]`}
             >
               Brands
             </p>
           </div>
 
-          <div>
-            <Image src={CircleImage} alt="circle" width={0} height={0} />
+          <div className={""}>
+            <Image
+              src={CircleImage}
+              alt="circle"
+              width={0}
+              height={0}
+              className={`hidden md:block`}
+            />
           </div>
         </div>
 
         <div
-          className={`w-2/3 flex align-center justify-between ml-auto items-end`}
+          className={`w-2/3 flex flex-col md:flex-row gap-2 align-center justify-between ml-auto items-end`}
         >
           <div className={``}>
             <h1
-              className={`${libre.className} font-[700] text-7xl text-[#D83E36]`}
+              className={`${libre.className} font-[700] text-5xl md:text-7xl text-[#D83E36]`}
             >
               100k
             </h1>
             <p
-              className={`${spaceGrotesk.className} font-[400] text-2xl text-[#000000]`}
+              className={`${spaceGrotesk.className} font-[400] text-[1rem] md:text-2xl text-[#000000]`}
             >
               People reached
             </p>
           </div>
           <button
-            className={` bg-[#000000] text-[#FFFFFF] p-4 flex flex-col md:flex-row items-center justify-center gap-2 font-[700]`}
+            className={`bg-[#000000] text-[#FFFFFF] p-4 flex items-center justify-center gap-2 md:font-[700]`}
           >
             <Link href={"/contact-us"}>
               <p>Send a Message </p>
@@ -400,9 +428,9 @@ export default function Home() {
           </button>
         </div>
 
-        <div className={`w-1/2 ml-auto text-right`}>
+        <div className={`w-full md:w-1/2 ml-auto text-right`}>
           <h1
-            className={`${libre.className} font-[700] text-7xl text-[#000000]`}
+            className={`${libre.className} font-[700] text-5xl md:text-7xl text-[#000000]`}
           >
             Let’s Work with <span className={`text-[#D83E36]`}>YOU</span>
           </h1>
@@ -414,18 +442,18 @@ export default function Home() {
             alt="coiled arrow"
             width={0}
             height={0}
-            className={`bottom-10 top-10 border`}
+            className={`bottom-10 rotate-[30deg] md:rotate-0 w-[100px] h-[100px] md:w-[200px] md:h-[200px]`}
           />
           <Image
             src={ArrowUp}
-            alt="coiled arrow"
+            alt="arrow"
             width={0}
             height={0}
             className={`hidden md:block`}
           />
           <Image
             src={ArrowUp}
-            alt="coiled arrow"
+            alt="arrow"
             width={0}
             height={0}
             className={`hidden md:block`}
