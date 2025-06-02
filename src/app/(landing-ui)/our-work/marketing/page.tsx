@@ -1,5 +1,5 @@
 import EnviadoOurWorksHeader from "@/_components/EnviadoOurWorksHeader";
-import { libre, spaceGrotesk } from "@/utilities/customFonts";
+import { spaceGrotesk, libre } from "@/utilities/customFonts";
 import Image from "next/image";
 import DeepspaceImage from "/public/assets/Deepspace.png";
 import EridianImage from "/public/assets/Eridian.png";
@@ -35,6 +35,7 @@ const MarketingPage = (props: Props) => {
 
   return (
     <div>
+      <EnviadoOurWorksHeader />
       <div className={`min-h-screen w-full flex flex-col items-center mt-5`}>
         <div className="w-[90%] flex flex-col items-center">
           <div className={``}></div>
