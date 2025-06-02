@@ -1,7 +1,11 @@
 import EnviadoCTA from "@/_components/EnviadoCTA";
 import EnviadoOurWorksHeader from "@/_components/EnviadoOurWorksHeader";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function OurWorkLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       <EnviadoOurWorksHeader />

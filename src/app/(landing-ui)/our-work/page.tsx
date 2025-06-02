@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import WineKite from "/public/assets/WineKite.png";
 
-export default function Home() {
+export default function OurWork() {
   const pathName = usePathname();
 
   const links = [
