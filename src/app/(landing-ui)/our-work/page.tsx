@@ -9,6 +9,7 @@ import WebDesignImage from "/public/assets/WebDesignImage.png";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import WineKite from "/public/assets/WineKite.png";
+import EnviadoOurWorksHeader from "@/_components/EnviadoOurWorksHeader";
 
 export default function OurWork() {
   const pathName = usePathname();
@@ -47,6 +48,7 @@ export default function OurWork() {
 
   return (
     <div className={``}>
+      <EnviadoOurWorksHeader />
       <div className={`min-h-screen w-full flex flex-col items-center mt-5`}>
         <div className="w-[90%] flex flex-col items-center">
           <div className={``}></div>
