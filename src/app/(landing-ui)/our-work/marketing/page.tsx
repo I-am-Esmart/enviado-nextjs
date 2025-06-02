@@ -8,7 +8,7 @@ import WebDesignImage from "/public/assets/WebDesignImage.png";
 
 type Props = {};
 
-const marketingPage = (props: Props) => {
+const MarketingPage = (props: Props) => {
   const workExamples = [
     {
       id: 1,
@@ -92,4 +92,4 @@ const marketingPage = (props: Props) => {
   );
 };
 
-export default marketingPage;
+export default MarketingPage;

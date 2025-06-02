@@ -8,7 +8,7 @@ import WebDesignImage from "/public/assets/WebDesignImage.png";
 
 type Props = {};
 
-const motionDesign = (props: Props) => {
+const MotionDesign = (props: Props) => {
   const workExamples = [
     {
       id: 1,
@@ -92,4 +92,4 @@ const motionDesign = (props: Props) => {
   );
 };
 
-export default motionDesign;
+export default MotionDesign;

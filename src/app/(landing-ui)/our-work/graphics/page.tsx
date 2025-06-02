@@ -8,7 +8,7 @@ import WebDesignImage from "/public/assets/WebDesignImage.png";
 
 type Props = {};
 
-const graphicsPage = (props: Props) => {
+const GraphicsPage = (props: Props) => {
   const workExamples = [
     {
       id: 1,
@@ -92,4 +92,4 @@ const graphicsPage = (props: Props) => {
   );
 };
 
-export default graphicsPage;
+export default GraphicsPage;
