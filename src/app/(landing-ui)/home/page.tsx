@@ -111,26 +111,14 @@ export default function Home() {
     };
   }, []);
 
-  // caroulsel autoplay settings
-  // function AutoPlay() {
-  //   const settings = {
-  //     dots: true,
-  //     infinite: true,
-  //     slidesToShow: 3,
-  //     slidesToScroll: 1,
-  //     autoplay: true,
-  //     speed: 2000,
-  //     autoplaySpeed: 2000,
-  //     cssEase: "linear",
-  //   };
-  // }
-
   return (
     <div className={``}>
       <div
         className={`min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-20`}
       >
-        <div className={`w-full px-10 py-10 flex justify-center items-center`}>
+        <div
+          className={`w-full px-10 md:px-5 py-10 flex justify-center items-center`}
+        >
           <div
             className={`w-full flex flex-col items-center text-white font-bold`}
           >
@@ -138,12 +126,12 @@ export default function Home() {
               initial={{ x: -200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className={`w-full ${libre.className} font-extrabold text-5xl md:w-[50%] md:text-7xl  text-start`}
+              className={`${libre.className} w-full md:w-[60%] font-extrabold text-5xl  md:text-8xl  text-start`}
             >
-              Your 360º{" "}
+              Your 360º
             </motion.h1>
             <h1
-              className={`w-full ${libre.className} text-5xl md:w-[50%] md:text-7xl  text-end`}
+              className={`w-full ${libre.className} text-5xl md:w-[60%] md:text-8xl text-end`}
             >
               marketing
             </h1>
@@ -151,12 +139,12 @@ export default function Home() {
               initial={{ x: 200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className={`w-full ${libre.className} text-5xl md:w-[50%] md:text-7xl  text-center`}
+              className={`w-full ${libre.className} text-5xl md:w-[50%] md:text-8xl  text-center`}
             >
               solution
             </motion.h1>
             <span
-              className={`${spaceGrotesk.className}text-sm -rotate-20 mt-3`}
+              className={`${spaceGrotesk.className}text-sm -rotate-20 mt-2`}
             >
               Starts here
             </span>
@@ -166,14 +154,14 @@ export default function Home() {
                 alt="arrow image"
                 width={0}
                 height={0}
-                className={`w-[7rem] rotate-[20deg] md:rotate-0 md:w-[12rem] md:text-start ml-2 mt-2 `}
+                className={`w-[7rem] rotate-[20deg] md:rotate-0 md:w-[12rem] md:text-start ml-2  md:mt-[-2rem] `}
               />
             </div>
           </div>
         </div>
 
         <div
-          className={`w-full px-5 mt-2 py-5 flex flex-col-reverse text-[1rem]  md:flex-row md:items-start `}
+          className={`w-full px-5 mt-2 md:mt-[-2rem] py-5 flex flex-col-reverse text-[1.2rem]  md:flex-row md:items-start `}
         >
           <div className={`w-full ${spaceGrotesk.className} text-white `}>
             <p>

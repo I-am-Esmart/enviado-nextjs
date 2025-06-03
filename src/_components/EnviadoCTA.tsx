@@ -26,16 +26,16 @@ const EnviadoCTA = (props: Props) => {
             />
           </div>
 
-          <div className={` flex flex-col items-center justify-center`}>
+          <div className={` flex flex-col items-end justify-center`}>
             <Link href={"/contact-us"}>
               <button
-                className={`${libre.className} bg-[#000000] flex items-center justify-center gap-2 p-4 text-[#FFFFFF]`}
+                className={`${libre.className} text-end bg-[#000000] flex items-center justify-center gap-2 p-4 text-[#FFFFFF]`}
               >
                 <span>Send a Message </span> <FaArrowRightLong />
               </button>
             </Link>
             <h2
-              className={`${libre.className} text-[#000000] font-[600] text-[2rem] md:text-[3rem]`}
+              className={`${libre.className} text-right text-[#000000] font-[600] text-[2rem] md:text-[4rem]`}
             >
               Let’s Work with
               <span className={`uppercase text-[#B0001E]`}> YOU</span>
