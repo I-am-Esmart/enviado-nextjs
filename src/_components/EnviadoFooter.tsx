@@ -8,25 +8,25 @@ const EnviadoFooter = () => {
     {
       id: 1,
       linkName: "Instagram",
-      //   linkRoute: "/",
+      linkRoute: "https://www.instagram.com/enviadohq/",
       img: <FaArrowUp />,
     },
     {
       id: 2,
       linkName: "Twitter",
-      //   linkRoute: "/about-us",
+      linkRoute: "https://x.com/enviadohq?s=21",
       img: <FaArrowUp />,
     },
     {
       id: 3,
       linkName: "LinkedIn",
-      //   linkRoute: "/service",
+      linkRoute: "https://www.linkedin.com/company/enviado-global-media/",
       img: <FaArrowUp />,
     },
     {
       id: 4,
       linkName: "Facebook",
-      //   linkRoute: "/our-work",
+      linkRoute: "https://www.facebook.com/profile.php?id=61575266797322",
       img: <FaArrowUp />,
     },
   ];
@@ -64,7 +64,13 @@ const EnviadoFooter = () => {
         <div className={`w-[70%] flex gap-5 `}>
           {socialLinks.map((link) => (
             <div className={` `} key={link.id}>
-              <Link key={link.id} href={""} className={``}>
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
+                key={link.id}
+                href={link.linkRoute}
+                className={``}
+              >
                 {link.linkName}
               </Link>
               {/* fix this later */}

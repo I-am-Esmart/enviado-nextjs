@@ -6,26 +6,19 @@ import { LiaTimesSolid } from "react-icons/lia";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { div } from "motion/react-client";
 
-type Props = {};
-
-export default function ContactUs(props: Props) {
+export default function ContactUs() {
   const [page, setPage] = useState(1);
 
   return (
     <div className={`w-full h-full bg-white`}>
       {/* <Nav /> */}
-      {/* <div
-        className={`relative min-h-screen pt-20 bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat`}
-      >
-        Contact Us
-      </div> */}
       {/* PAGE 1   */}
       {page === 1 && (
-        <div className={"w-full flex md:justify-center md:items-center"}>
+        <div className={` w-full flex md:justify-center md:items-center`}>
           <div className={`w-[95%]  flex flex-col  my-5`}>
             <div className={`w-full flex justify-end`}>
               <button
-                className={`${libre.className} bg-[#93002A] flex flex items-center gap-1 p-2 text-white`}
+                className={`${libre.className} bg-[#93002A] flex items-center gap-1 p-2 text-white`}
               >
                 <span>Cancel</span>
                 <LiaTimesSolid />
