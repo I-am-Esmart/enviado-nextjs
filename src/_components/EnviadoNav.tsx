@@ -34,11 +34,11 @@ const EnviadoNav = () => {
       linkName: "About Us",
       linkRoute: "/about-us",
     },
-    {
-      id: 3,
-      linkName: "Services",
-      linkRoute: "/service",
-    },
+    // {
+    //   id: 3,
+    //   linkName: "Services",
+    //   linkRoute: "/service",
+    // },
     {
       id: 4,
       linkName: "Our Works",
@@ -142,8 +142,6 @@ const EnviadoNav = () => {
       >
         <div className={"w-full flex md:justify-center md:items-center"}>
           <div className={`w-[95%]  flex flex-col  my-5`}>
-          
-
             <div className={`w-[90%]  ml-5 text-[#101010]`}>
               <p className={`${spaceGrotesk.className} text-xl`}>Hiya</p>
               <h2 className={`${libre.className} text-[2rem] font-bold`}>
