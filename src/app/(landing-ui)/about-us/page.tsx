@@ -66,7 +66,7 @@ export default function AboutUs(props: Props) {
           <div className="w-full flex justify-center items-center">
             <div className="w-full flex flex-col gap-10 text-white font-bold uppercase">
               <h1
-                className={`${libre.className} w-full md:w-[90%] text-[2rem] md:text-[3rem] font-extrabold`}
+                className={`${libre.className} w-full md:w-[90%] 2xl-[75%] text-[2rem] md:text-[3rem] font-extrabold`}
               >
                 We specialize in digital experience for a better product
               </h1>
@@ -74,7 +74,7 @@ export default function AboutUs(props: Props) {
           </div>
           <div className="w-full mt-2 py-5 flex flex-col-reverse md:flex-row md:items-start text-[1rem]">
             <div
-              className={`${spaceGrotesk.className} w-full md:w-[60%] text-white text-[1.2rem] font-[400]`}
+              className={`${spaceGrotesk.className} w-full md:w-[60%] lg:w-[40%] text-white text-[1.2rem] font-[400]`}
             >
               <p>
                 We don't just come up with ideas, products or experiences that
@@ -89,7 +89,7 @@ export default function AboutUs(props: Props) {
 
       <section className={`w-full min-h-screen`}>
         <div
-          className={`w-[90%] md:w-[80%] items-center md:items-start mx-auto py-10 flex flex-col gap-10`}
+          className={`w-[90%] md:w-[80%] 2xl:w-[70%] items-center md:items-start mx-auto py-10 flex flex-col gap-10`}
         >
           <h1
             className={`${libre.className} font-[700] text-[#970029] text-[2rem] md:text-[3rem]`}
@@ -125,7 +125,9 @@ export default function AboutUs(props: Props) {
       </section>
 
       <section className={`w-full min-h-screen`}>
-        <div className={`w-[90%] md:w-[80%] mx-auto flex flex-col gap-10`}>
+        <div
+          className={`w-[90%] md:w-[80%] 2xl-[70%] mx-auto flex flex-col gap-10`}
+        >
           <h1
             className={`${libre.className} font-[700] text-[#000000] text-[2rem] md:text-[3rem]`}
           >
@@ -151,7 +153,9 @@ export default function AboutUs(props: Props) {
       </section>
 
       <section className={`w-full min-h-screen`}>
-        <div className={`w-[90%] md:w-[80%] mx-auto flex flex-col gap-10`}>
+        <div
+          className={`w-[90%] md:w-[80%] 2xl:w-[70%] mx-auto flex flex-col gap-10`}
+        >
           <div className={`w-3/4 md:w-1/2 `}>
             <h1
               className={`${libre.className} text-[#93002A] font-[700] text-[2rem] md:text-[3rem]`}
@@ -189,7 +193,7 @@ export default function AboutUs(props: Props) {
                     />
                   </div>
                   <h1
-                    className={`${libre.className} text-[#000000] font-[700] text-[1.5rem] text-[#FF0000]`}
+                    className={`${libre.className} font-[700] text-[1.5rem] text-[#FF0000]`}
                   >
                     {project.name}
                   </h1>

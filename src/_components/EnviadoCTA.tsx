@@ -14,7 +14,7 @@ const EnviadoCTA = (props: Props) => {
         className={`w-full bg-[#FFE1E1] mt-10 flex flex-col items-center justify-center`}
       >
         <div
-          className={`w-full md:w-[60%] p-10 flex flex-col md:flex-row items-center justify-between gap-9 md:gap-15`}
+          className={`w-full md:w-[60%] lg-[40%] p-10 flex flex-col md:flex-row items-center justify-between gap-9 md:gap-15`}
         >
           <div className={``}>
             <Image
