@@ -126,12 +126,12 @@ export default function Home() {
               initial={{ x: -200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className={`${libre.className} w-full md:w-[60%] font-extrabold text-5xl  md:text-8xl  text-start`}
+              className={`${libre.className} w-full md:w-[60%] 2xl:w-[40%] font-extrabold text-5xl  md:text-8xl  text-start`}
             >
               Your 360º
             </motion.h1>
             <h1
-              className={`w-full ${libre.className} text-5xl md:w-[60%] md:text-8xl text-end`}
+              className={`w-full ${libre.className} text-5xl md:w-[60%] 2xl:w-[40%] md:text-8xl text-end`}
             >
               marketing
             </h1>
@@ -139,7 +139,7 @@ export default function Home() {
               initial={{ x: 200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className={`w-full ${libre.className} text-5xl md:w-[50%] md:text-8xl  text-center`}
+              className={`w-full ${libre.className} text-5xl md:w-[50%] 2xl:w-[40%] md:text-8xl  text-center`}
             >
               solution
             </motion.h1>
@@ -222,7 +222,7 @@ export default function Home() {
               {whatWeDoItems.map(({ id, letter, title, desc }, index) => (
                 <div
                   key={id}
-                  className={`flex-none w-[80%] md:w-[30%] bg-[#faeceb] p-6 md:p-12 mt-10 transition-all duration-300 ${
+                  className={`flex-none w-[80%] md:w-[30%] xl-[15%] bg-[#faeceb] p-6 md:p-12 mt-10 transition-all duration-300 ${
                     index % 2 === 0 ? "rotate-[-10deg]" : "translate-y-20"
                   }`}
                 >

@@ -35,7 +35,9 @@ const EnviadoFooter = () => {
     <footer
       className={`${spaceGrotesk.className} overflow-hidden bg-[#0D0909] min-h-[80vh] w-full text-white p-4 flex flex-col justify-between`}
     >
-      <div className={`w-[70%] md:w-[40%] flex justify-between text-[1rem]`}>
+      <div
+        className={`w-[70%] md:w-[40%] lg-[30%] flex justify-between text-[1rem]`}
+      >
         <div className={``}>
           <p>
             <Link href={"/about-us"}>About Us </Link>

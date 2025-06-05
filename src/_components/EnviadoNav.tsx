@@ -16,6 +16,31 @@ const EnviadoNav = () => {
   const [isModalOPen, setIsModalOpen] = useState<boolean>(false);
   const pathName = usePathname();
 
+  const handleSendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Here you would typically send the form data to your server or API
+    // For demonstration, we'll just log it to the console
+    const response = await fetch("/api/resend", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // You can include form data here
+        message: "You have a new contact form submission.",
+      }),
+    });
+
+    if (response.ok) {
+      console.log("Email sent successfully!");
+      setIsModalOpen(false);
+    } else {
+      console.log("Failed to send email.");
+    }
+    // Reset the form or perform any other actions after sending the email
+    e.currentTarget.reset(); // Reset the form fields
+  };
+
   const closeModal = () => {
     setIsModalOpen(false);
   };
@@ -81,7 +106,7 @@ const EnviadoNav = () => {
               src={Logo}
               width={0}
               height={0}
-              className={`w-32 md:w-40`}
+              className={`w-32 md:w-40 lg:w-48`}
             />
           </Link>
         </div>
@@ -141,7 +166,10 @@ const EnviadoNav = () => {
         modalWidth={50}
       >
         <div className={"w-full flex md:justify-center md:items-center"}>
-          <div className={`w-[95%]  flex flex-col  my-5`}>
+          <form
+            onSubmit={handleSendEmail}
+            className={`w-[95%]  flex flex-col  my-5`}
+          >
             <div className={`w-[90%]  ml-5 text-[#101010]`}>
               <p className={`${spaceGrotesk.className} text-xl`}>Hiya</p>
               <h2 className={`${libre.className} text-[2rem] font-bold`}>
@@ -248,11 +276,12 @@ const EnviadoNav = () => {
             </section>
 
             <button
+              type="submit"
               className={`w-[8rem] flex justify-center items-center ml-5 mt-8 bg-[#101010] text-white p-2  gap-1`}
             >
               <span>Submit</span> <GoArrowRight />
             </button>
-          </div>
+          </form>
         </div>
       </EnviadoModal>
     </>

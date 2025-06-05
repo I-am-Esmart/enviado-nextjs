@@ -25,12 +25,12 @@ export default function EnviadoOurWorksHeader() {
           <div className="w-full flex justify-center items-center">
             <div className="w-full flex flex-col gap-10 text-white font-bold uppercase">
               <h1
-                className={`w-full ${libre.className} font-extrabold text-5xl md:w-[50%] md:text-7xl`}
+                className={`${libre.className} w-full md:w-[50%] lg:w-[30%] font-extrabold text-5xl  md:text-7xl`}
               >
                 Our 360º
               </h1>
               <h1
-                className={`w-full ${libre.className} text-5xl md:w-[50%] md:text-7xl`}
+                className={`w-full ${libre.className} text-5xl md:w-[50%] lg:w-[30%] md:text-7xl`}
               >
                 results
               </h1>
@@ -75,7 +75,7 @@ export default function EnviadoOurWorksHeader() {
         id="links"
         className={`w-full flex  items-center justify-center mt-15`}
       >
-        <div className={`w-full   flex flex-wrap items-center justify-center`}>
+        <div className={`w-full  flex flex-wrap items-center justify-center`}>
           {links.map((link, index) => (
             <Link
               key={index}
