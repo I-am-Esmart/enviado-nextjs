@@ -19,6 +19,7 @@ import CircleImage from "/public/assets/CircleImage.png";
 import CoiledArrow from "/public/assets/CoiledArrow.png";
 import ArrowUp from "/public/assets/ArrowUp.png";
 import Link from "next/link";
+import WhatWeDoSection from "@/_components/landing-page/WhatWeDoSection";
 
 export default function Home() {
   // const [isScrolledY, setIsScrolledY] = useState<boolean>(false);
@@ -208,39 +209,7 @@ export default function Home() {
             />
           </div>
 
-          <div
-            className={`${libre.className} w-full font-[700] text-[#000000] text-[2rem] md:text-[3rem] mt-5`}
-          >
-            <h2>What We </h2>
-            <h2>
-              <span className={`text-[#970029] font-[500]`}>Really</span> Do??
-            </h2>
-          </div>
-
-          <div className="w-full overflow-x-auto custom-scrollbar ">
-            <div className="flex gap-12 py-8 px-4">
-              {whatWeDoItems.map(({ id, letter, title, desc }, index) => (
-                <div
-                  key={id}
-                  className={`flex-none w-[80%] md:w-[30%] xl-[15%] bg-[#faeceb] p-6 md:p-12 mt-10 transition-all duration-300 ${
-                    index % 2 === 0 ? "rotate-[-10deg]" : "translate-y-20"
-                  }`}
-                >
-                  <div className="font-spaceGrotesk font-medium text-[3rem] uppercase text-white bg-[#93002a]  w-20 h-18 flex px-2">
-                    <p>{letter}</p>
-                  </div>
-                  <p className="font-neueRegrade font-bold text-[1.5rem] uppercase mt-4">
-                    {title}
-                  </p>
-                  <p className="font-spaceGrotesk font-normal text-[1rem] mt-4">
-                    {desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className={``}></div>
+          <WhatWeDoSection />
 
           <section
             className={`${spaceGrotesk.className} relative w-full h-screen mt-10 px-20 md:px-40`}
