@@ -20,6 +20,7 @@ import CoiledArrow from "/public/assets/CoiledArrow.png";
 import ArrowUp from "/public/assets/ArrowUp.png";
 import Link from "next/link";
 import WhatWeDoSection from "@/_components/landing-page/WhatWeDoSection";
+import HeroSection from "@/_components/landing-page/HeroSection";
 
 export default function Home() {
   // const [isScrolledY, setIsScrolledY] = useState<boolean>(false);
@@ -114,79 +115,7 @@ export default function Home() {
 
   return (
     <div className={``}>
-      <div
-        className={`min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-20`}
-      >
-        <div
-          className={`w-full px-10 md:px-5 py-10 flex justify-center items-center`}
-        >
-          <div
-            className={`w-full flex flex-col items-center text-white font-bold`}
-          >
-            <motion.h1
-              initial={{ x: -200, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className={`${libre.className} w-full md:w-[60%] 2xl:w-[40%] font-extrabold text-5xl  md:text-8xl  text-start`}
-            >
-              Your 360º
-            </motion.h1>
-            <h1
-              className={`w-full ${libre.className} text-5xl md:w-[60%] 2xl:w-[40%] md:text-8xl text-end`}
-            >
-              marketing
-            </h1>
-            <motion.h1
-              initial={{ x: 200, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className={`w-full ${libre.className} text-5xl md:w-[50%] 2xl:w-[40%] md:text-8xl  text-center`}
-            >
-              solution
-            </motion.h1>
-            <span
-              className={`${spaceGrotesk.className}text-sm -rotate-20 mt-2`}
-            >
-              Starts here
-            </span>
-            <div className={`w-[50%] flex items-center justify-end`}>
-              <Image
-                src={ArrowImage}
-                alt="arrow image"
-                width={0}
-                height={0}
-                className={`w-[7rem] rotate-[20deg] md:rotate-0 md:w-[12rem] md:text-start ml-2  md:mt-[-2rem] `}
-              />
-            </div>
-          </div>
-        </div>
-
-        <div
-          className={`w-full px-5 mt-2 md:mt-[-2rem] py-5 flex flex-col-reverse text-[1.2rem]  md:flex-row md:items-start `}
-        >
-          <div className={`w-full ${spaceGrotesk.className} text-white `}>
-            <p>
-              We don't just come up with ideas, products or experiences that
-              push boundaries and challenge the status quo – we also bring in
-              the results!
-            </p>
-          </div>
-          <div className={`w-full flex items-center justify-end py-4`}>
-            <button
-              className={`w-2/4 ${spaceGrotesk.className} cursor-pointer flex items-center justify-center gap-2 bg-[#FFFFFF] text-[#970029] text-[1rem] font-normal p-[0.8rem]`}
-            >
-              <Image
-                src={ButtonImage}
-                alt="arrow"
-                width={0}
-                height={0}
-                className={``}
-              />
-              Let's talk
-            </button>
-          </div>
-        </div>
-      </div>
+      <HeroSection />
 
       <div className={`min-h-screen w-full flex flex-col items-center mt-5`}>
         <div className="w-[90%] flex flex-col items-center">
