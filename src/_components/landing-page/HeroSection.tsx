@@ -91,7 +91,7 @@ const HeroSection = () => {
             />
           </div>
           <div
-            className={`2xl:w-[70%] flex flex-col my-10 space-y-4 md:my-5 md:space-y-0 md:flex-row-reverse`}
+            className={`2xl:w-[70%] flex flex-col mt-10 md:mt-10 space-y-4 md:my-5 md:space-y-0 md:flex-row-reverse`}
           >
             <div className={`md:w-[30%] flex justify-end md:justify-start`}>
               <button
