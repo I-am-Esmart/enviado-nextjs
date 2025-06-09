@@ -57,7 +57,7 @@ export default function MobileMenu() {
     {
       id: 1,
       linkName: "Home",
-      linkRoute: "/",
+      linkRoute: "/home",
     },
     {
       id: 2,
@@ -96,7 +96,7 @@ export default function MobileMenu() {
                 <div
                   onClick={() => setIsModalOpen(true)}
                   key={link.id}
-                  className="mx-4 text-base font-medium py-2 px-4 cursor-pointer text-[#93002A]"
+                  className="mx-4 text-2xl font-medium py-2 px-4 cursor-pointer text-[#FFFFFF] opacity-25"
                 >
                   {link.linkName}
                 </div>
@@ -106,10 +106,10 @@ export default function MobileMenu() {
                 <Link
                   key={link.id}
                   href={link.linkRoute}
-                  className={`mx-4 text-base font-medium py-2 px-4 ${
+                  className={`mx-4 text-2xl font-medium py-2 px-4 ${
                     pathName === link.linkRoute
-                      ? "bg-[#93002A] text-white font-bold"
-                      : "text-[#93002A]"
+                      ? "text-white font-extrabold"
+                      : "text-[#FFFFFF] opacity-25"
                   }`}
                 >
                   {link.linkName}
