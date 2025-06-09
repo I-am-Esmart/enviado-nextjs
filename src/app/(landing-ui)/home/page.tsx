@@ -17,7 +17,10 @@ import LolaImage from "/public/assets/Lola.png";
 import WebDesignImage from "/public/assets/WebDesignImage.png";
 import CircleImage from "/public/assets/CircleImage.png";
 import CoiledArrow from "/public/assets/CoiledArrow.png";
+import Pentagon_Image from "/public/assets/PentagonImage.png";
+import LoveImage from "/public/assets/LoveImage.png";
 import ArrowUp from "/public/assets/ArrowUp.png";
+import LeftPointedArrow from "/public/assets/LeftPointedArrow.png";
 import Link from "next/link";
 import WhatWeDoSection from "@/_components/landing-page/WhatWeDoSection";
 import HeroSection from "@/_components/landing-page/HeroSection";
@@ -120,12 +123,12 @@ export default function Home() {
       <div className={`min-h-screen w-full flex flex-col items-center mt-5`}>
         <div className="w-[90%] flex flex-col items-center">
           <div
-            className={`${spaceGrotesk.className} leading-[3rem] text-center text-[#970029] text-[1rem] leading-[-1rem] font-[400]`}
+            className={`${spaceGrotesk.className}  text-center text-[#970029] text-[1rem] leading-[-1rem] font-[400] xl:leading-[-2rem]`}
           >
-            <p className={`text-[1rem] md:text-[2rem] font-[400]`}>
+            <p className={`text-[1rem] md:text-[3rem] font-[400]`}>
               Boldly turning your
             </p>
-            <h2 className={`text-[2.2rem] md:text-[3.2rem] font-[700]`}>
+            <h2 className={`text-[2.2rem] md:text-[5rem] font-[700]`}>
               vision into reality
             </h2>
 
@@ -140,52 +143,94 @@ export default function Home() {
 
           <WhatWeDoSection />
 
+          <div className="w-full relative">
+            <Image
+              src={Pentagon_Image}
+              alt="Pentagon"
+              width={0}
+              height={0}
+              className="w-[58px] h-[57px] md:w-[135px] md:h-[134px] mt-5 left-0 top-0"
+            />
+          </div>
           <section
-            className={`${spaceGrotesk.className} relative w-full h-screen mt-10 px-20 md:px-40`}
+            className={`${spaceGrotesk.className} relative w-full h-screen mt-10 px-10 md:px-40`}
           >
-            <div className={`w-full h-[32%]`}>
-              <h1
-                className={`w-full text-6xl text-left text-[#000000] font-bold ${
-                  ideas ? "opacity-100" : "opacity-20"
-                }  `}
-              >
-                IDEAS
-              </h1>
+            <div
+              className={`w-full h-[25%] md:h-[32%] flex justify-between items-center`}
+            >
+              <div className={``}>
+                <h1
+                  className={`w-full text-4xl md:text-6xl text-left text-[#000000] font-bold ${
+                    ideas ? "opacity-100" : "opacity-20"
+                  }  `}
+                >
+                  IDEAS
+                </h1>
+              </div>
+
+              <div
+                className={`rotate-45 w-[90px] h-[90px] md:w-[200px] md:h-[200px] transition-all duration-75 ease-in ${
+                  creates ? "bg-[#FF3F56] rotate-180" : "bg-[#020CB1]"
+                } `}
+              ></div>
             </div>
 
-            <div className={`w-full h-[32%]`}>
+            <div
+              className={`h-[25%] md:h-[32%] w-full flex justify-between items-center`}
+            >
               <h1
-                className={`w-full text-6xl text-center text-[#93002A] font-bold ${
+                className={`w-full text-4xl md:text-6xl text-center text-[#93002A] font-bold ${
                   creates ? "opacity-100" : "opacity-20"
                 } `}
               >
                 CREATES
               </h1>
-            </div>
 
-            <div className={`w-full h-[32%]`}>
-              <h1
-                className={`w-full text-6xl text-right text-[#000000] font-bold ${
-                  results ? "opacity-100" : "opacity-20"
-                } `}
-              >
-                RESULTS
-              </h1>
+              <div className="absolute right-0">
+                <Image
+                  src={LoveImage}
+                  alt="heart image"
+                  width={0}
+                  height={0}
+                  className={`w-[45px] h-[43px] md:w-[87px] md:h-[84px]`}
+                />
+              </div>
             </div>
 
             <div
-              className={`absolute top-10 right-40 rotate-45 md:w-[200px] md:h-[200px] transition-all duration-75 ease-in ${
-                creates ? "bg-[#FF3F56] rotate-180" : "bg-[#020CB1]"
-              } `}
-            ></div>
+              className={`w-full h-[25%] md:h-[32%] flex justify-between items-center`}
+            >
+              <div
+                className={`rotate-45 w-[90px] h-[90px] md:w-[200px] md:h-[200px] transition-all duration-75 ease-in ${
+                  creates ? "bg-[#007AFF] rotate-270 " : "bg-[#F7DE67]"
+                }  `}
+              ></div>
+
+              <div className={``}>
+                <h1
+                  className={`ml-8 w-full text-4xl md:text-6xl text-right text-[#000000] font-bold ${
+                    results ? "opacity-100" : "opacity-20"
+                  } `}
+                >
+                  RESULTS
+                </h1>
+              </div>
+            </div>
+
             <div
-              className={`absolute bottom-30 left-40 rotate-45 md:w-[200px] md:h-[200px] transition-all duration-75 ease-in ${
-                creates ? "bg-[#007AFF] rotate-270 " : "bg-[#F7DE67]"
-              }  `}
-            ></div>
+              className={`h-[10%] md:h-[4%] w-full flex justify-center items-center`}
+            >
+              <Image
+                src={LeftPointedArrow}
+                alt="left pointed arrow"
+                width={0}
+                height={0}
+                className={`pl-10`}
+              />
+            </div>
           </section>
 
-          <div className={`w-full`}>
+          <div className={`w-[80%] md:mt-30`}>
             <div className={``}>
               <h2
                 className={`${libre.className} leading-[3rem] uppercase font-[700] text-[2rem]  text-[#970029] md:leading-[5rem] md:text-[4rem] `}
@@ -197,11 +242,13 @@ export default function Home() {
             <div
               className={`${libre.className} w-full flex justify-between items-center`}
             >
-              <button
-                className={`flex items-center gap-2 bg-[#000000] text-white font-[700] p-3 md:p-4`}
-              >
-                <span>Our Work</span> <FaArrowRightLong />
-              </button>
+              <Link href={"/our-work"}>
+                <button
+                  className={`flex items-center gap-2 bg-[#000000] text-white font-[700] p-3 md:p-4 rounded-none`}
+                >
+                  <span>Our Work</span> <FaArrowRightLong />
+                </button>
+              </Link>
               <p className={`hidden md:block w-1/3 font-[400] text-[1rem]`}>
                 We do great work!!! See below some of the work we have done and
                 landmark we have achieved.
@@ -209,7 +256,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={`mb-10`}>
+          {/* <div className={`w-full mb-10`}>
             {workExamples.map(
               ({ id, image, title, desc, webdesignImage }, index) => (
                 <div
@@ -253,6 +300,50 @@ export default function Home() {
                 </div>
               )
             )}
+          </div> */}
+
+          <div className={`w-[80%] mx-auto mb-20`}>
+            {workExamples.map(({ id, image, title, desc, webdesignImage }) => (
+              <div
+                key={id}
+                className={`w-full flex flex-col items-center justify-between gap-2 mt-10`}
+              >
+                <div className={`w-full`}>
+                  <Image
+                    src={image}
+                    alt=""
+                    width={0}
+                    height={0}
+                    className={`w-full h-full object-cover`}
+                  />
+                </div>
+
+                <div
+                  className={`w-full flex flex-col md:flex-row md:gap-10 items-center justify-center`}
+                >
+                  <div className={`w-[50%] flex flex-col`}>
+                    <h2
+                      className={`${libre.className} text-[#FF0000] font-[700] text-[2rem]`}
+                    >
+                      {title}
+                    </h2>
+                    <p
+                      className={`${spaceGrotesk.className} font-[400] text-[1rem]`}
+                    >
+                      {desc}
+                    </p>
+                  </div>
+
+                  <Image
+                    src={webdesignImage}
+                    alt=""
+                    width={0}
+                    height={0}
+                    className={`w-[50%] h-full object-cover`}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className={``}></div>

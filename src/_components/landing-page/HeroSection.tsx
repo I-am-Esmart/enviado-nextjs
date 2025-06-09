@@ -107,7 +107,7 @@ const HeroSection = () => {
               </button>
             </div>
 
-            <div className={`md:w-[80%] border`}>
+            <div className={`md:w-[80%]`}>
               <p
                 className={`${spaceGrotesk.className} md:w-[65%] text-white text-base md:text-xl font-normal`}
               >

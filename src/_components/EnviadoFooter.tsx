@@ -2,6 +2,7 @@ import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import { div } from "motion/react-client";
 import Link from "next/link";
 import { FaArrowUp } from "react-icons/fa";
+import FooterBackground from "/public/assets/FooterBackground.png";
 
 const EnviadoFooter = () => {
   const socialLinks = [
@@ -33,7 +34,7 @@ const EnviadoFooter = () => {
 
   return (
     <footer
-      className={`${spaceGrotesk.className} overflow-hidden bg-[#0D0909] min-h-[80vh] w-full text-white p-4 flex flex-col justify-between`}
+      className={`${spaceGrotesk.className} bg-[url('/assets/FooterBackground.png')] bg-center bg-cover bg-no-repeat overflow-hidden min-h-[80vh] h-full w-full text-white p-4 flex flex-col justify-between`}
     >
       <div
         className={`w-[70%] md:w-[40%] lg-[30%] flex justify-between text-[1rem]`}
@@ -62,10 +63,10 @@ const EnviadoFooter = () => {
         <p>Enviado</p>
       </div>
 
-      <div className={`w-full`}>
+      <div className={`w-full justify-center items-center`}>
         <div className={`w-[70%] flex gap-5 `}>
           {socialLinks.map((link) => (
-            <div className={` `} key={link.id}>
+            <div className={`flex gap-x-1`} key={link.id}>
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
@@ -75,8 +76,7 @@ const EnviadoFooter = () => {
               >
                 {link.linkName}
               </Link>
-              {/* fix this later */}
-              {/* <span className={`text-[1rem]`}>{link.img}</span> */}
+              <FaArrowUp className={`rotate-45 text-[1.3rem] text-white`} />
             </div>
           ))}
         </div>
