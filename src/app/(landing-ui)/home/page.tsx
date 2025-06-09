@@ -244,7 +244,7 @@ export default function Home() {
             >
               <Link href={"/our-work"}>
                 <button
-                  className={`flex items-center gap-2 bg-[#000000] text-white font-[700] p-3 md:p-4`}
+                  className={`flex items-center gap-2 bg-[#000000] text-white font-[700] p-3 md:p-4 rounded-none`}
                 >
                   <span>Our Work</span> <FaArrowRightLong />
                 </button>
@@ -302,8 +302,7 @@ export default function Home() {
             )}
           </div> */}
 
-          {/* Wrap the whole map content in a container */}
-          <div className={`w-[80%] mx-auto mb-10`}>
+          <div className={`w-[80%] mx-auto mb-20`}>
             {workExamples.map(({ id, image, title, desc, webdesignImage }) => (
               <div
                 key={id}
@@ -322,7 +321,7 @@ export default function Home() {
                 <div
                   className={`w-full flex flex-col md:flex-row md:gap-10 items-center justify-center`}
                 >
-                  <div className={`flex flex-col`}>
+                  <div className={`w-[50%] flex flex-col`}>
                     <h2
                       className={`${libre.className} text-[#FF0000] font-[700] text-[2rem]`}
                     >
@@ -340,7 +339,7 @@ export default function Home() {
                     alt=""
                     width={0}
                     height={0}
-                    className={`w-full h-full object-cover`}
+                    className={`w-[50%] h-full object-cover`}
                   />
                 </div>
               </div>
