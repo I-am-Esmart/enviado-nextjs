@@ -123,12 +123,12 @@ export default function Home() {
       <div className={`min-h-screen w-full flex flex-col items-center mt-5`}>
         <div className="w-[90%] flex flex-col items-center">
           <div
-            className={`${spaceGrotesk.className}  text-center text-[#970029] text-[1rem] leading-[-1rem] font-[400] xl:leading-[-2rem]`}
+            className={`${spaceGrotesk.className}  text-center text-[#970029] leading-[-1rem] font-[400] xl:leading-[-2rem]`}
           >
             <p className={`text-[1rem] md:text-[3rem] font-[400]`}>
               Boldly turning your
             </p>
-            <h2 className={`text-[2.2rem] md:text-[5rem] font-[700]`}>
+            <h2 className={`uppercase text-[2.4rem] md:text-[5rem] font-[700]`}>
               vision into reality
             </h2>
 
@@ -143,20 +143,21 @@ export default function Home() {
 
           <WhatWeDoSection />
 
-          <div className="w-full relative">
-            <Image
-              src={Pentagon_Image}
-              alt="Pentagon"
-              width={0}
-              height={0}
-              className="w-[58px] h-[57px] md:w-[135px] md:h-[134px] mt-5 left-0 top-0"
-            />
-          </div>
           <section
-            className={`${spaceGrotesk.className} relative w-full h-screen mt-10 px-10 md:px-40`}
+            className={`${spaceGrotesk.className} flex flex-col justify-center items-center relative w-full h-screen px-5 md:mt-20 md:px-30`}
           >
+            <div className="w-full relative">
+              <Image
+                src={Pentagon_Image}
+                alt="Pentagon"
+                width={0}
+                height={0}
+                className="w-[58px] h-[57px] md:w-[135px] md:h-[134px] mt-5 left-0 top-0"
+              />
+            </div>
+
             <div
-              className={`w-full h-[25%] md:h-[32%] flex justify-between items-center`}
+              className={`w-full h-[20%] md:h-[32%] flex justify-between items-center`}
             >
               <div className={``}>
                 <h1
@@ -176,7 +177,7 @@ export default function Home() {
             </div>
 
             <div
-              className={`h-[25%] md:h-[32%] w-full flex justify-between items-center`}
+              className={`h-[20%] md:h-[32%] w-full flex justify-between items-center`}
             >
               <h1
                 className={`w-full text-4xl md:text-6xl text-center text-[#93002A] font-bold ${
@@ -198,7 +199,7 @@ export default function Home() {
             </div>
 
             <div
-              className={`w-full h-[25%] md:h-[32%] flex justify-between items-center`}
+              className={`w-full h-[20%] md:h-[32%] flex justify-between items-center`}
             >
               <div
                 className={`rotate-45 w-[90px] h-[90px] md:w-[200px] md:h-[200px] transition-all duration-75 ease-in ${
@@ -217,20 +218,18 @@ export default function Home() {
               </div>
             </div>
 
-            <div
-              className={`h-[10%] md:h-[4%] w-full flex justify-center items-center`}
-            >
+            <div className={`w-full flex justify-start items-center`}>
               <Image
                 src={LeftPointedArrow}
                 alt="left pointed arrow"
                 width={0}
                 height={0}
-                className={`pl-10`}
+                className={`h-[85px] w-[100px] md:h-[110px] md:w-[130px] ml-10 md:ml-25 xl:ml-40`}
               />
             </div>
           </section>
 
-          <div className={`w-[80%] md:mt-30`}>
+          <div className={`w-[90%] md:w-[80%] md:mt-30`}>
             <div className={``}>
               <h2
                 className={`${libre.className} leading-[3rem] uppercase font-[700] text-[2rem]  text-[#970029] md:leading-[5rem] md:text-[4rem] `}
@@ -302,7 +301,7 @@ export default function Home() {
             )}
           </div> */}
 
-          <div className={`w-[80%] mx-auto mb-20`}>
+          <div className={`w-[90%] md:w-[80%] xl-[60%] mx-auto mb-20`}>
             {workExamples.map(({ id, image, title, desc, webdesignImage }) => (
               <div
                 key={id}
@@ -319,9 +318,9 @@ export default function Home() {
                 </div>
 
                 <div
-                  className={`w-full flex flex-col md:flex-row md:gap-10 items-center justify-center`}
+                  className={`w-full flex flex-col md:flex-row md:gap-10 items-start justify-center md:items-center`}
                 >
-                  <div className={`w-[50%] flex flex-col`}>
+                  <div className={`w-full md:w-[50%] flex flex-col`}>
                     <h2
                       className={`${libre.className} text-[#FF0000] font-[700] text-[2rem]`}
                     >
