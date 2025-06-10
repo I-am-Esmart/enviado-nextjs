@@ -63,20 +63,25 @@ const EnviadoFooter = () => {
         <p>Enviado</p>
       </div>
 
-      <div className={`w-full justify-center items-center`}>
-        <div className={`w-[70%] flex gap-5 `}>
+      <div className={`w-full justify-center items-center cursor-pointer`}>
+        <div className={`w-[70%] flex gap-2 md:gap-5 `}>
           {socialLinks.map((link) => (
-            <div className={`flex gap-x-1`} key={link.id}>
+            <div
+              className={`flex items-center justify-center gap-x-1`}
+              key={link.id}
+            >
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
                 key={link.id}
                 href={link.linkRoute}
-                className={``}
+                className={`text-[0.8rem] md:text-[1.3rem]`}
               >
                 {link.linkName}
               </Link>
-              <FaArrowUp className={`rotate-45 text-[1.3rem] text-white`} />
+              <FaArrowUp
+                className={`rotate-45 text-white text-[1rem] md:text-[1.3rem]`}
+              />
             </div>
           ))}
         </div>
@@ -88,12 +93,12 @@ const EnviadoFooter = () => {
         <hr />
 
         <div className={`flex flex-col gap-4`}>
-          <div className="w-full flex justify-between  text-[1rem] font-[500]">
+          <div className="w-full flex justify-between  text-[0.759rem] md:text-[1rem] font-[500]">
             <p>Privacy Policy</p>
             <p>Terms and conditions</p>
           </div>
 
-          <div className="w-full flex justify-center text-[1rem] font-[500]">
+          <div className="w-full flex justify-center text-[0.759rem] md:text-[1rem] font-[500]">
             <p>
               © {new Date().getFullYear()} Enviado Global Brand Company. All
               Rights Reserved.

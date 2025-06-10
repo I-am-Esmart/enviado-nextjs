@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import Image from "next/image";
 import ArrowImage from "/public/assets/Arrow.png";
+import Link from "next/link";
 
 const HeroSection = () => {
   const threeTransition = {
@@ -90,8 +91,9 @@ const HeroSection = () => {
               className={`-ml-5 md:absolute md:-top-12 md:-ml-30`}
             />
           </div>
+
           <div
-            className={`2xl:w-[70%] flex flex-col mt-10 md:mt-10 space-y-4 md:my-5 md:space-y-0 md:flex-row-reverse`}
+            className={`2xl:w-[70%] flex flex-col mt-10 md:mt-15 space-y-4 md:my-3 md:space-y-0 md:flex-row-reverse`}
           >
             <div className={`md:w-[30%] flex justify-end md:justify-start`}>
               <button
@@ -102,8 +104,9 @@ const HeroSection = () => {
                 >
                   -
                 </span>
-
-                <span className={`text-[#93002A]`}>Let's talk</span>
+                <Link href="/contact-us">
+                  <span className={`text-[#93002A]`}>Let's talk</span>
+                </Link>
               </button>
             </div>
 

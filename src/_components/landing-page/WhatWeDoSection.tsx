@@ -37,7 +37,7 @@ const WhatWeDoSection = () => {
   }, []);
 
   return (
-    <section className={`my-3 space-y-5 w-full h-[calc(105vh-5rem)]`}>
+    <section className={`mt-[4rem] my-3 space-y-5 w-full h-[calc(105vh-5rem)]`}>
       <div
         className={`${libre.className} w-full font-bold text-[#000000] text-3xl md:text-5xl `}
       >

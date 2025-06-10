@@ -21,7 +21,7 @@ export default function EnviadoOurWorksHeader() {
   return (
     <>
       <div className="min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-10">
-        <div className="w-full h-screen px-10 py-5 flex flex-col justify-center items-center">
+        <div className="w-full 2xl:w-[80%] h-screen px-10 py-5 flex flex-col justify-center items-center">
           <div className="w-full flex justify-center items-center">
             <div className="w-full flex flex-col gap-10 text-white font-bold uppercase">
               <h1
@@ -50,8 +50,9 @@ export default function EnviadoOurWorksHeader() {
               className={`w-full ${spaceGrotesk.className} text-white text-[1.2rem] font-[400]`}
             >
               <p>
-                We do great work!!! See below some of the work we have done and
-                landmark we have achieved.
+                We do great work!!! <br />
+                See below some of the work we have done and landmark we have
+                achieved.
               </p>
             </div>
             <div className="w-full flex items-center justify-end py-4">
