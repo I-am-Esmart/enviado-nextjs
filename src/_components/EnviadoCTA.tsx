@@ -3,7 +3,7 @@ import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Link from "next/link";
-import WineKite from "/public/assets/WineKite.png";
+import HandPointing from "/public/assets/HandPointing.png";
 
 type Props = {};
 
@@ -14,11 +14,11 @@ const EnviadoCTA = (props: Props) => {
         className={`w-full bg-[#FFE1E1] mt-10 flex flex-col items-center justify-center`}
       >
         <div
-          className={`w-full md:w-[60%] lg-[40%] p-10 flex flex-col md:flex-row items-center justify-between gap-9 md:gap-15`}
+          className={`w-full md:w-[60%] 2xl:w-[30%] p-10 flex flex-col md:flex-row items-center justify-between gap-9 md:gap-15`}
         >
           <div className={``}>
             <Image
-              src={WineKite}
+              src={HandPointing}
               alt="kite image"
               width={0}
               height={0}

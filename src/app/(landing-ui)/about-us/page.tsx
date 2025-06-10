@@ -15,18 +15,18 @@ type Props = {};
 export default function AboutUs(props: Props) {
   const team = [
     {
-      name: "John Doe",
+      name: "Samuel Adeyinka",
       role: "CEO",
       image: Person1Image,
     },
     {
-      name: "Jane Smith",
-      role: "CTO",
+      name: "Solomon Olalemi",
+      role: "COO",
       image: SolomonPassport,
     },
     {
-      name: "Alice Johnson",
-      role: "Designer",
+      name: "Ayobami Praise Afolabi",
+      role: "Creative Lead",
       image: Person3Image,
     },
   ];
