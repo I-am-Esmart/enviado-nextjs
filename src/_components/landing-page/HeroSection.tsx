@@ -37,7 +37,7 @@ const HeroSection = () => {
         className={`w-full h-screen flex flex-col justify-center items-center`}
       >
         <div
-          className={`w-[90%] 2xl:w-[70%] h-screen flex flex-col justify-center items-center`}
+          className={`w-[90%] 2xl:w-[75%] h-screen flex flex-col justify-center items-center`}
         >
           <div
             className={`${libre.className} w-full pt-30 mx-auto text-white font-extrabold text-6xl md:w-[70%] 2xl:w-[70%] md:pt-40 md:text-[5rem] lg:text-[7rem]`}

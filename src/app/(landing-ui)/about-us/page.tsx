@@ -63,23 +63,27 @@ export default function AboutUs(props: Props) {
         className={`relative min-h-screen pt-20 bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat`}
       >
         <div className="w-full h-screen px-10 py-5 flex flex-col justify-center items-center">
-          <div className="w-full flex justify-center items-center">
-            <div className="w-full flex flex-col gap-10 text-white font-bold uppercase">
-              <h1
-                className={`${libre.className} w-full md:w-[90%] 2xl-[75%] text-[2rem] md:text-[3rem] font-extrabold`}
-              >
-                We specialize in digital experience for a better product
-              </h1>
+          <div
+            className={`w-full md:w-[90%] 2xl:w-[80%] flex flex-col justify-center items-center`}
+          >
+            <div className="w-full flex justify-center items-center">
+              <div className="w-full flex flex-col gap-10 text-white font-bold">
+                <h1
+                  className={`${libre.className} w-full md:w-[90%] 2xl-[75%] text-[2.1rem] md:text-[4.5rem] font-extrabold`}
+                >
+                  We specialize in digital experience for a better product
+                </h1>
+              </div>
             </div>
-          </div>
-          <div className="w-full mt-2 py-5 flex flex-col-reverse md:flex-row md:items-start text-[1rem]">
-            <div
-              className={`${spaceGrotesk.className} w-full md:w-[60%] lg:w-[40%] text-white text-[1.2rem] font-[400]`}
-            >
-              <p>
-                We don't just come up with ideas, products or experiences that
-                push boundaries and challenge the status quo.
-              </p>
+            <div className="w-full mt-2 py-5 flex flex-col-reverse md:flex-row md:items-start text-[1rem]">
+              <div
+                className={`${spaceGrotesk.className} w-full md:w-[80%] lg:w-[70%] 2xl:w-[60%] text-white text-[1rem] md:text-[1.5rem] font-[400]`}
+              >
+                <p>
+                  We don't just come up with ideas, products or experiences that
+                  push boundaries and challenge the status quo.
+                </p>
+              </div>
             </div>
           </div>
         </div>
