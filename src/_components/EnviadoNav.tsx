@@ -168,7 +168,7 @@ const EnviadoNav = () => {
         <div className={"w-full flex md:justify-center md:items-center"}>
           <form
             onSubmit={handleSendEmail}
-            className={`w-[95%]  flex flex-col  my-5`}
+            className={`w-[95%]  flex flex-col my-5`}
           >
             <div className={`w-[90%]  ml-5 text-[#101010]`}>
               <p className={`${spaceGrotesk.className} text-xl`}>Hiya</p>
@@ -179,7 +179,8 @@ const EnviadoNav = () => {
                 Let’s start with your idea and create that result you desire
               </p>
             </div>
-            <section className={`h-[50vh]`}>
+
+            <section className={`w-full h-[50vh]`}>
               <div
                 className={`w-full max-h-full overflow-auto 
                 [&::-webkit-scrollbar]:w-1.5
@@ -188,87 +189,84 @@ const EnviadoNav = () => {
                 [&::-webkit-scrollbar-thumb]:rounded`}
               >
                 <div
-                  className={`${spaceGrotesk.className} w-[95%] flex flex-col gap-4 ml-5 mt-5 text-[1rem] font-400`}
+                  className={`${spaceGrotesk.className} w-full flex flex-col items-center justify-center gap-4 mt-5 text-[1rem] font-400`}
                 >
-                  <div className={`w-full flex-col md:flex-row`}>
-                    <div
-                      className={`w-full md:w-1/2 bg-[#f8f8f8] flex gap-2 p-2`}
-                    >
-                      <input type="checkbox" name="" id="" className={``} />
+                  <div className="w-full flex flex-col md:flex-row gap-2">
+                    <div className="w-full md:w-1/2 bg-[#f8f8f8] flex items-center gap-2 p-2">
+                      <input type="checkbox" />
                       <p>Branding</p>
                     </div>
 
-                    <div
-                      className={`w-full md:w-1/2 bg-[#FCCF00] mt-2 flex gap-2 p-2`}
-                    >
-                      <input type="checkbox" name="" id="" className={``} />
-                      <p className={``}>Product Video Ads</p>
+                    <div className="w-full md:w-1/2 bg-[#FCCF00] flex items-center gap-2 p-2">
+                      <input type="checkbox" />
+                      <p>Product Video Ads</p>
                     </div>
                   </div>
 
-                  <div className={`flex-col md:flex-row gap-2`}>
-                    <div
-                      className={`w-full md:w-1/2 bg-[#F8F8F8] flex gap-2  p-2`}
-                    >
-                      <input type="checkbox" name="" id="" />{" "}
+                  <div className="w-full flex flex-col md:flex-row gap-2">
+                    <div className="w-full md:w-1/2 bg-[#f8f8f8] flex items-center gap-2 p-2">
+                      <input type="checkbox" />
                       <p>Motion Graphics</p>
                     </div>
-                    <div
-                      className={`w-full md:w-1/2 bg-[#FCCF00] mt-2 flex gap-2 p-2`}
-                    >
-                      <input type="checkbox" name="" id="" />
-                      <p className={``}>Marketing Ads</p>
+
+                    <div className="w-full md:w-1/2 bg-[#FCCF00] flex items-center gap-2 p-2">
+                      <input type="checkbox" />
+                      <p>Marketing Ads</p>
                     </div>
                   </div>
                 </div>
 
                 <p
-                  className={`${spaceGrotesk.className} ml-5 mt-5 text-[1.5rem] font-medium`}
+                  className={`${spaceGrotesk.className} ml-5 mt-5 text-[2rem] font-medium`}
                 >
                   Hello,
                 </p>
 
                 <div
-                  className={`${spaceGrotesk.className} ml-5 mt-5 text-[1rem] font-400 `}
+                  className={`${spaceGrotesk.className} flex flex-col gap-y-5 ml-5 mt-5 text-[1rem] font-400 `}
                 >
-                  <div className={``}>
-                    <p className={` text-[#000000] font-light`}>My name is</p>
+                  <div className={`flex flex-col gap-y-5`}>
+                    <p className={`text-[#000000] text-3xl font-light`}>
+                      My name is
+                    </p>
                     <input
                       type="text"
                       placeholder="John Doe"
-                      className={`w-full md:w-1/2`}
+                      className={`w-full md:w-2/3 text-4xl opacity-20 font-medium`}
                     />
                   </div>
 
-                  <div className={`mt-2`}>
-                    <p className={` text-[#000000] font-light`}>I work for</p>
+                  <div className={`flex flex-col gap-y-5`}>
+                    <p className={` text-[#000000] text-3xl font-light`}>
+                      I work for
+                    </p>
                     <input
                       type="text"
-                      placeholder="Company / Business name"
-                      className={`w-full md:w-1/2`}
+                      placeholder="Company name"
+                      className={`w-full md:w-2/3 text-4xl opacity-20 font-medium`}
                     />
                   </div>
 
-                  <div className={`mt-2`}>
-                    <p className={` text-[#000000] font-light`}>
+                  <div className={`flex flex-col gap-y-5`}>
+                    <p className={` text-[#000000] text-3xl font-light`}>
                       Here is my email
                     </p>
                     <input
                       type="text"
                       placeholder="example@gmail.com"
-                      className={`w-full md:w-1/2`}
+                      className={`w-full md:w-2/3 text-4xl opacity-20 font-medium`}
                     />
                   </div>
 
-                  <div className={`mt-2`}>
-                    <p className={` text-[#000000] font-light`}>
+                  <div className={`flex flex-col gap-y-5`}>
+                    <p className={`text-[#000000] text-3xl font-light`}>
                       And I have a message for you
                     </p>
                     <textarea
                       rows={10}
                       name="message"
                       placeholder="Enter your message"
-                      className={`w-full md:w-1/2`}
+                      className={`w-full md:w-2/3 text-4xl opacity-20 font-medium`}
                     />
                   </div>
                 </div>
