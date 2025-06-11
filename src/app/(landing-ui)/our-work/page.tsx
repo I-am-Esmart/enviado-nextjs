@@ -51,10 +51,8 @@ export default function OurWork() {
       <EnviadoOurWorksHeader />
 
       <div className={`min-h-screen w-full flex flex-col items-center mt-5`}>
-        <div className="w-[90%] flex flex-col items-center">
-          <div className={``}></div>
-
-          <div className={``}>
+        <div className="w-full flex flex-col items-center">
+          <div className={`w-[90%] md:w-[80%] xl-[60%] mx-auto mb-20`}>
             {workExamples.map(
               ({ id, image, title, desc, webdesignImage }, index) => (
                 <Link key={id} href={`/our-work/${id}`}>
@@ -64,15 +62,15 @@ export default function OurWork() {
                     <div className={`w-full`}>
                       <Image
                         src={image}
-                        alt=""
+                        alt="project image"
                         width={0}
                         height={0}
-                        className={`w-full h-full object-cover`}
+                        className={`w-full h-full md:h-[27rem] 2xl:h-[35rem]`}
                       />
                     </div>
 
                     <div
-                      className={`w-full flex flex-col md:flex-row md:gap-10 items-center justify-center`}
+                      className={` w-full flex flex-col md:flex-row md:gap-10 items-center justify-between`}
                     >
                       <div className={` flex flex-col`}>
                         <h2
@@ -92,7 +90,7 @@ export default function OurWork() {
                         alt=""
                         width={0}
                         height={0}
-                        className={`w-full h-full object-cover`}
+                        className={` w-full h-full object-cover`}
                       />
                     </div>
                   </div>

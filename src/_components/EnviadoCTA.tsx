@@ -14,28 +14,30 @@ const EnviadoCTA = (props: Props) => {
         className={`w-full bg-[#FFE1E1] mt-10 flex flex-col items-center justify-center`}
       >
         <div
-          className={`w-full md:w-[60%] 2xl:w-[30%] p-10 flex flex-col md:flex-row items-center justify-between gap-9 md:gap-15`}
+          className={`w-full md:w-[80%] 2xl:w-[40%] p-10 2xl:p-5 flex flex-col md:flex-row items-center justify-between gap-9 md:gap-15`}
         >
           <div className={``}>
             <Image
               src={HandPointing}
-              alt="kite image"
+              alt="hand pointing image"
               width={0}
               height={0}
               className={`w-[10rem] md:w-[15rem] h-auto`}
             />
           </div>
 
-          <div className={` flex flex-col items-end justify-center`}>
+          <div
+            className={`w-[80%] md:w-[50%] flex flex-col items-end justify-center gap-y-5 md:gap-y-0`}
+          >
             <Link href={"/contact-us"}>
               <button
-                className={`${libre.className} text-end bg-[#000000] flex items-center justify-center gap-2 p-4 text-[#FFFFFF]`}
+                className={`${libre.className} text-end bg-[#000000] flex items-center justify-center gap-2 p-4 mr-10 md:mr-0 text-[#FFFFFF]`}
               >
                 <span>Send a Message </span> <FaArrowRightLong />
               </button>
             </Link>
             <h2
-              className={`${libre.className} text-right text-[#000000] font-[600] text-[2rem] md:text-[4rem]`}
+              className={`${libre.className} text-right text-[#000000] font-[600] text-[2rem] md:text-[4rem] mr-10 md:mr-0`}
             >
               Let’s Work with
               <span className={`uppercase text-[#B0001E]`}> YOU</span>

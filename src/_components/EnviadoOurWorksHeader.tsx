@@ -21,7 +21,7 @@ export default function EnviadoOurWorksHeader() {
   return (
     <>
       <div className="min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-10">
-        <div className="w-full 2xl:w-[80%] h-screen px-10 py-5 flex flex-col justify-center items-center">
+        <div className="w-full 2xl:w-[75%] h-screen px-10 py-5 flex flex-col justify-center items-center">
           <div className="w-full flex justify-center items-center">
             <div className="w-full flex flex-col gap-10 text-white font-bold uppercase">
               <h1
@@ -42,7 +42,7 @@ export default function EnviadoOurWorksHeader() {
               alt="arrow image"
               width={0}
               height={0}
-              className="w-[7rem] rotate-[20deg] md:rotate-0 md:w-[12rem] ml-2"
+              className="w-[7rem] rotate-[20deg] md:rotate-0 md:w-[12rem] ml-2 xl:ml-5"
             />
           </div>
           <div className="w-full mt-2 py-5 flex flex-col-reverse md:flex-row md:items-start text-[1rem]">
@@ -74,9 +74,11 @@ export default function EnviadoOurWorksHeader() {
 
       <div
         id="links"
-        className={`w-full flex  items-center justify-center mt-15`}
+        className={`w-full flex items-center justify-center mt-15`}
       >
-        <div className={`w-full  flex flex-wrap items-center justify-center`}>
+        <div
+          className={`w-[80%] 2xl:w-[65%] flex flex-wrap gap-x-2 md:gap-x-10 items-center justify-start`}
+        >
           {links.map((link, index) => (
             <Link
               key={index}

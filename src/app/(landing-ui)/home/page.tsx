@@ -255,52 +255,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* <div className={`w-full mb-10`}>
-            {workExamples.map(
-              ({ id, image, title, desc, webdesignImage }, index) => (
-                <div
-                  key={id}
-                  className={`w-full flex flex-col items-center justify-between gap-2 mt-10`}
-                >
-                  <div className={`w-full`}>
-                    <Image
-                      src={image}
-                      alt=""
-                      width={0}
-                      height={0}
-                      className={`w-full h-full object-cover`}
-                    />
-                  </div>
-
-                  <div
-                    className={`w-full flex flex-col md:flex-row md:gap-10 items-center justify-center`}
-                  >
-                    <div className={` flex flex-col`}>
-                      <h2
-                        className={`${libre.className} text-[#FF0000] font-[700] text-[2rem]`}
-                      >
-                        {title}
-                      </h2>
-                      <p
-                        className={`${spaceGrotesk.className} font-[400] text-[1rem] `}
-                      >
-                        {desc}
-                      </p>
-                    </div>
-
-                    <Image
-                      src={webdesignImage}
-                      alt=""
-                      width={0}
-                      height={0}
-                      className={`w-full h-full object-cover`}
-                    />
-                  </div>
-                </div>
-              )
-            )}
-          </div> */}
-
           <div className={`w-[90%] md:w-[80%] xl-[60%] mx-auto mb-20`}>
             {workExamples.map(({ id, image, title, desc, webdesignImage }) => (
               <div
@@ -310,7 +264,7 @@ export default function Home() {
                 <div className={`w-full`}>
                   <Image
                     src={image}
-                    alt=""
+                    alt="project image"
                     width={0}
                     height={0}
                     className={`w-full h-full object-cover`}
