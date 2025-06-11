@@ -18,20 +18,12 @@ export default function EnviadoModal({
 
   return (
     <div className={`fixed z-50 inset-0 flex justify-center items-center`}>
-      {/* Backdrop */}
       <div className="w-full absolute inset-0 bg-[#101010] opacity-75 backdrop-blur-sm"></div>
 
-      {/* Modal Content */}
       <div
         className={`relative bg-white w-[${modalWidth}%] py-3 px-5 rounded-lg z-10`}
       >
-        {/* <div className={`flex items-center justify-end`}>
-          <span onClick={onClose} className="cursor-pointer">
-            X
-          </span>
-        </div> */}
-
-        <div className={`w-full flex justify-end`}>
+        <div className={`w-full relative z-50 flex justify-end`}>
           <button
             onClick={onClose}
             className={`${libre.className} bg-[#93002A] flex items-center gap-1 p-2 text-white`}

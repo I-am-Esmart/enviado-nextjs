@@ -148,7 +148,7 @@ export default function MobileMenu() {
                       [&::-webkit-scrollbar-thumb]:rounded`}
               >
                 <div
-                  className={`${spaceGrotesk.className} w-[95%] flex flex-col gap-4 ml-5 mt-5 text-[1rem] font-400`}
+                  className={`${spaceGrotesk.className} w-[95%] flex flex-col gap-4 px-5 mt-5 text-[1rem] font-400`}
                 >
                   <div className={`w-full flex-col md:flex-row`}>
                     <div
@@ -188,7 +188,7 @@ export default function MobileMenu() {
                   Hello,
                 </p>
 
-                <div
+                {/* <div
                   className={`${spaceGrotesk.className} ml-5 mt-5 text-[1rem] font-400 `}
                 >
                   <div className={``}>
@@ -229,6 +229,55 @@ export default function MobileMenu() {
                       name="message"
                       placeholder="Enter your message"
                       className={`w-full md:w-1/2`}
+                    />
+                  </div>
+                </div> */}
+
+                <div
+                  className={`${spaceGrotesk.className} flex flex-col gap-y-5 ml-5 mt-5 text-[1rem] font-400 `}
+                >
+                  <div className={`flex flex-col gap-y-5`}>
+                    <p className={`text-[#000000] text-xl font-light`}>
+                      My name is
+                    </p>
+                    <input
+                      type="text"
+                      placeholder="John Doe"
+                      className={`w-full md:w-2/3 text-2xl opacity-20 font-medium`}
+                    />
+                  </div>
+
+                  <div className={`flex flex-col gap-y-5`}>
+                    <p className={` text-[#000000] text-xl font-light`}>
+                      I work for
+                    </p>
+                    <input
+                      type="text"
+                      placeholder="Company name"
+                      className={`w-full md:w-2/3 text-2xl opacity-20 font-medium`}
+                    />
+                  </div>
+
+                  <div className={`flex flex-col gap-y-5`}>
+                    <p className={` text-[#000000] text-xl font-light`}>
+                      Here is my email
+                    </p>
+                    <input
+                      type="text"
+                      placeholder="example@gmail.com"
+                      className={`w-full md:w-2/3 text-2xl opacity-20 font-medium`}
+                    />
+                  </div>
+
+                  <div className={`flex flex-col gap-y-5`}>
+                    <p className={`text-[#000000] text-xl font-light`}>
+                      And I have a message for you
+                    </p>
+                    <textarea
+                      rows={10}
+                      name="message"
+                      placeholder="Enter your message"
+                      className={`w-full md:w-2/3 text-2xl opacity-20 font-medium`}
                     />
                   </div>
                 </div>
