@@ -14,7 +14,7 @@ const EnviadoCTA = (props: Props) => {
         className={`w-full bg-[#FFE1E1] mt-10 flex flex-col items-center justify-center`}
       >
         <div
-          className={`w-full md:w-[80%] 2xl:w-[40%] p-10 2xl:p-5 flex flex-col md:flex-row items-center justify-between gap-9 md:gap-15`}
+          className={`w-full md:w-[80%] p-10 2xl:p-5 flex flex-col md:flex-row items-center justify-between gap-9 md:gap-15`}
         >
           <div className={``}>
             <Image
@@ -27,7 +27,7 @@ const EnviadoCTA = (props: Props) => {
           </div>
 
           <div
-            className={`w-[80%] md:w-[50%] flex flex-col items-end justify-center gap-y-5 md:gap-y-0`}
+            className={`w-[80%] md:w-[50%] flex flex-col items-end justify-center md:gap-y-0`}
           >
             <Link href={"/contact-us"}>
               <button

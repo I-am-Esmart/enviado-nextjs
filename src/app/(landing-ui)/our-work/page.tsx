@@ -90,7 +90,7 @@ export default function OurWork() {
                         alt=""
                         width={0}
                         height={0}
-                        className={` w-full h-full object-cover`}
+                        className={`object-cover`}
                       />
                     </div>
                   </div>
