@@ -25,7 +25,7 @@ export default function EnviadoOurWorksHeader() {
           'h-screen bg-[url("/assets/landingImage.png")] bg-center bg-cover bg-no-repeat py-10'
         }
       >
-        <div className="w-full h-screen flex flex-col justify-center items-center">
+        <div className="w-full overflow-hidden h-screen flex flex-col justify-center items-center">
           <div
             className={`w-[80%] 2xl:w-[65%] h-screen flex flex-col justify-center items-center`}
           >
@@ -74,7 +74,7 @@ export default function EnviadoOurWorksHeader() {
                       .getElementById("links")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
-                  className={`w-2/4 ${spaceGrotesk.className} flex items-center justify-center gap-2 bg-white text-[#970029] text-[1rem] md:text-[1.7rem] font-normal p-[0.8rem]`}
+                  className={`w-2/4 ${spaceGrotesk.className} flex items-center justify-center gap-2 bg-white text-[#970029] text-[1rem] md:text-[1.7rem] font-normal p-[0.8rem] `}
                 >
                   <Image src={ButtonImage} alt="arrow" width={0} height={0} />
                   Explore
@@ -87,7 +87,7 @@ export default function EnviadoOurWorksHeader() {
 
       <div
         id="links"
-        className={`w-full flex items-center justify-center mt-15`}
+        className={`w-full md:w-[80%] flex items-center justify-end mt-15`}
       >
         <div
           className={`w-[80%] 2xl:w-[65%] flex flex-wrap gap-x-2 md:gap-x-10 items-center justify-start`}

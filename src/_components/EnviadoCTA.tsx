@@ -27,7 +27,7 @@ const EnviadoCTA = (props: Props) => {
           </div>
 
           <div
-            className={`w-[80%] md:w-[50%] flex flex-col items-end justify-center md:gap-y-0`}
+            className={`w-[80%] flex flex-col items-end justify-center md:gap-y-0`}
           >
             <Link href={"/contact-us"}>
               <button
@@ -39,7 +39,7 @@ const EnviadoCTA = (props: Props) => {
             <h2
               className={`${libre.className} text-right text-[#000000] font-[600] text-[2rem] md:text-[4rem] mr-10 md:mr-0`}
             >
-              Let’s Work with
+              Let’s Work <br /> with
               <span className={`uppercase text-[#B0001E]`}> YOU</span>
             </h2>
           </div>
