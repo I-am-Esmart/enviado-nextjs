@@ -114,10 +114,10 @@ export default function EnviadoOurWorksHeader() {
 
       <div
         id="links"
-        className={`w-full md:w-[80%] flex items-center justify-end mt-15`}
+        className={`w-full md:w-[80%] flex items-center justify-center md:justify-end mt-15`}
       >
         <div
-          className={`w-[80%] 2xl:w-[65%] flex flex-wrap gap-x-2 md:gap-x-10 items-center justify-start`}
+          className={`w-[90%] md:w-[80%] 2xl:w-[65%] flex flex-wrap gap-x-2 md:gap-x-10 items-center justify-start`}
         >
           {links.map((link, index) => (
             <Link

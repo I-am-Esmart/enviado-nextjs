@@ -107,7 +107,7 @@ export default function OurWork() {
                 <Link key={id} href={`/our-work/${id}`}>
                   <div
                     className={`${
-                      index % 2 === 0 ? "ml-5 md:ml-10" : "mr-5 md:mr-10"
+                      index % 2 === 0 ? "md:ml-10" : "md:mr-10"
                     } w-full flex flex-col items-center justify-between gap-2 mt-10`}
                   >
                     <div className="w-full">
@@ -146,6 +146,51 @@ export default function OurWork() {
                 </Link>
               )
             )}
+
+            {/* {workExamples.map(
+              ({ id, image, title, desc, webdesignImage }, index) => (
+                <Link key={id} href={`/our-work/${id}`}>
+                  <div
+                    className={`${
+                      index % 2 === 0 ? "md:ml-10" : "md:mr-10"
+                    } w-full flex flex-col items-center justify-between gap-2 mt-10`}
+                  >
+                    <div className="w-full">
+                      <Image
+                        src={image}
+                        alt="project image"
+                        width={0}
+                        height={0}
+                        className="w-full h-full md:h-[27rem] 2xl:h-[35rem]"
+                      />
+                    </div>
+
+                    <div className="w-full flex flex-col md:flex-row md:gap-10 items-center justify-between">
+                      <div className="flex flex-col">
+                        <h2
+                          className={`${libre.className} text-[#FF0000] font-[700] text-[2rem]`}
+                        >
+                          {title}
+                        </h2>
+                        <p
+                          className={`${spaceGrotesk.className} font-[400] text-[1rem]`}
+                        >
+                          {desc}
+                        </p>
+                      </div>
+
+                      <Image
+                        src={webdesignImage}
+                        alt=""
+                        width={0}
+                        height={0}
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                </Link>
+              )
+            )} */}
           </div>
         </div>
       </div>
