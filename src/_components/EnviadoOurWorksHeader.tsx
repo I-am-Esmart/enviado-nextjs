@@ -1,4 +1,6 @@
 "use client";
+// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import Nav from "@/_components/EnviadoNav";
 import Image from "next/image";
@@ -9,6 +11,22 @@ import Link from "next/link";
 
 export default function EnviadoOurWorksHeader() {
   const pathname = usePathname();
+
+  const textTransition = {
+    duration: 1,
+    delay: 0.5,
+    ease: [0, 0.71, 0.2, 1.01],
+  };
+  const textInitial = { x: -100, opacity: 0 };
+  const textAnimate = { x: 0, opacity: 1 };
+
+  const resultTransition = {
+    duration: 2,
+    delay: 0.8,
+    ease: [0, 0.71, 0.2, 1.01],
+  };
+  const resultInitial = { opacity: 0 };
+  const resultAnimate = { opacity: 1 };
 
   const links = [
     { name: "All Projects", route: "/our-work" },
@@ -31,18 +49,24 @@ export default function EnviadoOurWorksHeader() {
           >
             <div className="w-full flex justify-center items-center">
               <div className="w-full flex flex-col gap-10 text-white font-bold uppercase">
-                <h1
+                <motion.h1
+                  initial={textInitial}
+                  animate={textAnimate}
+                  transition={textTransition}
                   className={`${libre.className} w-full font-extrabold text-6xl md:text-7xl lg:text-8xl`}
                 >
                   Our 360º
-                </h1>
+                </motion.h1>
 
                 <div className={`flex flex-col md:flex-row`}>
-                  <h1
+                  <motion.h1
+                    initial={resultInitial}
+                    animate={resultAnimate}
+                    transition={resultTransition}
                     className={`w-full ${libre.className} text-6xl  md:text-7xl lg:text-8xl md:w-[50%] lg:w-[30%]`}
                   >
                     results
-                  </h1>
+                  </motion.h1>
 
                   <div className="w-[50%] flex items-end justify-end">
                     <Image
@@ -58,7 +82,10 @@ export default function EnviadoOurWorksHeader() {
             </div>
 
             <div className="w-full mt-2 py-5 flex flex-col-reverse md:flex-row md:items-start text-[1rem]">
-              <div
+              <motion.div
+                initial={textInitial}
+                animate={textAnimate}
+                transition={textTransition}
                 className={`w-full ${spaceGrotesk.className} text-white text-[1.2rem] md:text-[1.5rem] font-[400]`}
               >
                 <p>
@@ -66,7 +93,7 @@ export default function EnviadoOurWorksHeader() {
                   See below some of the work we have done and landmark we have
                   achieved.
                 </p>
-              </div>
+              </motion.div>
               <div className="w-full flex items-center justify-end py-4">
                 <button
                   onClick={() =>
@@ -74,10 +101,10 @@ export default function EnviadoOurWorksHeader() {
                       .getElementById("links")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
-                  className={`w-2/4 ${spaceGrotesk.className} flex items-center justify-center gap-2 bg-white text-[#970029] text-[1rem] md:text-[1.7rem] font-normal p-[0.8rem] `}
+                  className={`w-2/4 ${spaceGrotesk.className} flex items-center justify-center gap-2 bg-white text-[#970029] hover:bg-[#970029] hover:text-white text-[1rem] md:text-[1.7rem] font-normal p-[0.8rem] `}
                 >
                   <Image src={ButtonImage} alt="arrow" width={0} height={0} />
-                  Explore
+                  <p>Explore</p>
                 </button>
               </div>
             </div>
