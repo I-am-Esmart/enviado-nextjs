@@ -1,11 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import Nav from "@/_components/EnviadoNav";
-// import Slider from "slick-carousel";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import { useEffect, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import ArrowImage from "/public/assets/Arrow.png";
 import ButtonImage from "/public/assets/ButtonImage.png";
@@ -30,6 +30,10 @@ export default function Home() {
   const [ideas, setIdeas] = useState<boolean>(false);
   const [creates, setCreates] = useState<boolean>(false);
   const [results, setResults] = useState<boolean>(false);
+
+  const ideasRef = useRef<HTMLDivElement>(null);
+  const createsRef = useRef<HTMLDivElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   const whatWeDoItems = [
     {
@@ -83,37 +87,69 @@ export default function Home() {
   ];
 
   //scroll function to handle the scroll event
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    console.log("scrolled", window.scrollY);
-    if (scrollY >= 3070 && scrollY <= 3265) {
-      setIdeas(true);
-      setCreates(false);
-      setResults(false);
-    } else if (scrollY >= 3267 && scrollY <= 3476) {
-      setIdeas(false);
-      setCreates(true);
-      setResults(false);
-      // setIsScrolledY(true);
-    } else if (scrollY >= 3478 && scrollY <= 3678) {
-      setIdeas(false);
-      setCreates(false);
-      setResults(true);
+  // const handleScroll = () => {
+  //   const scrollY = window.scrollY;
+  //   console.log("scrolled", window.scrollY);
+  //   if (scrollY >= 2350 && scrollY <= 2450) {
+  //     setIdeas(true);
+  //     setCreates(false);
+  //     setResults(false);
+  //   } else if (scrollY >= 2500 && scrollY <= 2600) {
+  //     setIdeas(false);
+  //     setCreates(true);
+  //     setResults(false);
+  //     // setIsScrolledY(true);
+  //   } else if (scrollY >= 2700 && scrollY <= 2800) {
+  //     setIdeas(false);
+  //     setCreates(false);
+  //     setResults(true);
 
-      // setIsScrolledY(false);
-    } else {
-      setIdeas(false);
-      setCreates(false);
-      setResults(false);
-    }
-  };
+  //     // setIsScrolledY(false);
+  //   } else {
+  //     setIdeas(false);
+  //     setCreates(false);
+  //     setResults(false);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      const middle = window.innerHeight / 2;
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+      const checkVisibility = (ref: React.RefObject<HTMLDivElement>) => {
+        const rect = ref.current?.getBoundingClientRect();
+        return rect ? rect.top <= middle && rect.bottom >= middle : false;
+      };
+
+      if (checkVisibility(ideasRef)) {
+        setIdeas(true);
+        setCreates(false);
+        setResults(false);
+      } else if (checkVisibility(createsRef)) {
+        setIdeas(false);
+        setCreates(true);
+        setResults(false);
+      } else if (checkVisibility(resultsRef)) {
+        setIdeas(false);
+        setCreates(false);
+        setResults(true);
+      } else {
+        setIdeas(false);
+        setCreates(false);
+        setResults(false);
+      }
     };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -143,7 +179,7 @@ export default function Home() {
 
           <WhatWeDoSection />
 
-          <section
+          {/* <section
             className={`${spaceGrotesk.className} flex flex-col justify-center items-center relative w-full h-screen px-5 md:mt-20 md:px-30`}
           >
             <div className="w-full relative">
@@ -212,6 +248,95 @@ export default function Home() {
                   className={`ml-8 w-full text-4xl md:text-6xl text-right text-[#000000] font-bold ${
                     results ? "opacity-100" : "opacity-20"
                   } `}
+                >
+                  RESULTS
+                </h1>
+              </div>
+            </div>
+
+            <div className={`w-full flex justify-start items-center`}>
+              <Image
+                src={LeftPointedArrow}
+                alt="left pointed arrow"
+                width={0}
+                height={0}
+                className={`h-[85px] w-[100px] md:h-[110px] md:w-[130px] ml-10 md:ml-25 xl:ml-40`}
+              />
+            </div>
+          </section> */}
+
+          <section
+            className={`${spaceGrotesk.className} flex flex-col justify-center items-center relative w-full h-screen px-5 md:mt-20 md:px-30`}
+          >
+            <div className="w-full relative">
+              <Image
+                src={Pentagon_Image}
+                alt="Pentagon"
+                width={0}
+                height={0}
+                className="w-[58px] h-[57px] md:w-[135px] md:h-[134px] mt-5 left-0 top-0"
+              />
+            </div>
+
+            <div
+              ref={ideasRef}
+              className={`w-full h-[20%] md:h-[32%] flex justify-between items-center`}
+            >
+              <div>
+                <h1
+                  className={`w-full text-4xl md:text-6xl text-left text-[#000000] font-bold ${
+                    ideas ? "opacity-100" : "opacity-20"
+                  }`}
+                >
+                  IDEAS
+                </h1>
+              </div>
+
+              <div
+                className={`rotate-45 w-[90px] h-[90px] md:w-[200px] md:h-[200px] transition-all duration-75 ease-in ${
+                  creates ? "bg-[#FF3F56] rotate-180" : "bg-[#020CB1]"
+                }`}
+              ></div>
+            </div>
+
+            <div
+              ref={createsRef}
+              className={`h-[20%] md:h-[32%] w-full flex justify-between items-center`}
+            >
+              <h1
+                className={`w-full text-4xl md:text-6xl text-center text-[#93002A] font-bold ${
+                  creates ? "opacity-100" : "opacity-20"
+                }`}
+              >
+                CREATES
+              </h1>
+
+              <div className="absolute right-0">
+                <Image
+                  src={LoveImage}
+                  alt="heart image"
+                  width={0}
+                  height={0}
+                  className="w-[45px] h-[43px] md:w-[87px] md:h-[84px]"
+                />
+              </div>
+            </div>
+
+            <div
+              ref={resultsRef}
+              className={`w-full h-[20%] md:h-[32%] flex justify-between items-center`}
+            >
+              <div
+                className={`rotate-45 w-[90px] h-[90px] md:w-[200px] md:h-[200px] transition-all duration-75 ease-in ${
+                  creates ? "bg-[#007AFF] rotate-270" : "bg-[#F7DE67]"
+                }`}
+              ></div>
+
+              <div>
+                <h1
+                  className={`ml-8 w-full text-4xl md:text-6xl text-right text-[#000000] font-bold ${
+                    results ? "opacity-100" : "opacity-20"
+                  }`}
                 >
                   RESULTS
                 </h1>

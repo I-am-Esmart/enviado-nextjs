@@ -1,8 +1,9 @@
+"use client";
+// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import EnviadoCTA from "@/_components/EnviadoCTA";
 import Nav from "@/_components/EnviadoNav";
 import { libre, spaceGrotesk } from "@/utilities/customFonts";
-import JohnDoeImage from "/public/assets/JohnDoe.jpg";
-import { desc, div } from "motion/react-client";
 import Image from "next/image";
 import DeepspaceImage from "/public/assets/Deepspace.png";
 import EridianImage from "/public/assets/Eridian.png";
@@ -13,6 +14,22 @@ import Person3Image from "/public/assets/Person3.png";
 type Props = {};
 
 export default function AboutUs(props: Props) {
+  const bigTextTransition = {
+    duration: 1,
+    delay: 0.5,
+    ease: [0, 0.71, 0.2, 1.01],
+  };
+  const BigTextInitial = { x: -100, opacity: 0 };
+  const BigTextAnimate = { x: 0, opacity: 1 };
+
+  const resultTransition = {
+    duration: 2,
+    delay: 0.8,
+    ease: [0, 0.71, 0.2, 1.01],
+  };
+  const smallTextInitial = { opacity: 0 };
+  const smallTextAnimate = { opacity: 1 };
+
   const team = [
     {
       name: "Samuel Adeyinka",
@@ -68,15 +85,22 @@ export default function AboutUs(props: Props) {
           >
             <div className="w-full flex justify-center items-center">
               <div className="w-full flex flex-col gap-10 text-white font-bold">
-                <h1
+                <motion.h1
+                  initial={BigTextInitial}
+                  animate={BigTextAnimate}
+                  transition={bigTextTransition}
                   className={`${libre.className} w-full text-[2.1rem] md:text-[5rem] font-extrabold`}
                 >
                   We specialize in digital <br /> experience for a better <br />
                   product
-                </h1>
+                </motion.h1>
               </div>
             </div>
-            <div className="w-full mt-2 py-5 flex flex-col-reverse md:flex-row md:items-start text-[1rem]">
+            <motion.div
+              initial={smallTextInitial}
+              animate={smallTextAnimate}
+              className="w-full mt-2 py-5 flex flex-col-reverse md:flex-row md:items-start text-[1rem]"
+            >
               <div
                 className={`${spaceGrotesk.className} w-full md:w-[80%] lg:w-[70%] 2xl:w-[60%] text-white text-[1rem] md:text-[1.5rem] font-[400]`}
               >
@@ -86,7 +110,7 @@ export default function AboutUs(props: Props) {
                   push boundaries and challenge the status quo.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 

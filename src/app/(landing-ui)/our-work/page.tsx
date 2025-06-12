@@ -11,9 +11,9 @@ import Link from "next/link";
 import WineKite from "/public/assets/WineKite.png";
 import EnviadoOurWorksHeader from "@/_components/EnviadoOurWorksHeader";
 
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect, useRef } from "react";
+// import { motion, useAnimation } from "framer-motion";
+// import { useInView } from "react-intersection-observer";
+// import { useEffect, useRef } from "react";
 
 export default function OurWork() {
   const pathName = usePathname();

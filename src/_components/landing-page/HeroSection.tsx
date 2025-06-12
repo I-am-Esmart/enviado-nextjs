@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import Image from "next/image";
 import ArrowImage from "/public/assets/Arrow.png";
+import ButtonImage from "/public/assets/ButtonImage.png";
 import Link from "next/link";
 
 const HeroSection = () => {
@@ -102,7 +103,13 @@ const HeroSection = () => {
                 <span
                   className={`w-[20%] bg-[#93002A] text-white font-extrabold`}
                 >
-                  -
+                  <Image
+                    src={ButtonImage}
+                    alt="button image"
+                    width={0}
+                    height={0}
+                    className={`w-full h-full object-cover`}
+                  />
                 </span>
                 <Link href="/contact-us">
                   <span className={`text-[#93002A]`}>Let's talk</span>
