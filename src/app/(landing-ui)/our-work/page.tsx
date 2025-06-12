@@ -11,6 +11,10 @@ import Link from "next/link";
 import WineKite from "/public/assets/WineKite.png";
 import EnviadoOurWorksHeader from "@/_components/EnviadoOurWorksHeader";
 
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect, useRef } from "react";
+
 export default function OurWork() {
   const pathName = usePathname();
 
@@ -53,7 +57,7 @@ export default function OurWork() {
       <div className={`min-h-screen w-full flex flex-col items-center mt-5`}>
         <div className="w-full flex flex-col items-center">
           <div className={`w-[90%] md:w-[80%] xl-[60%] mx-auto mb-20`}>
-            {workExamples.map(
+            {/* {workExamples.map(
               ({ id, image, title, desc, webdesignImage }, index) => (
                 <Link key={id} href={`/our-work/${id}`}>
                   <div
@@ -90,7 +94,52 @@ export default function OurWork() {
                         alt=""
                         width={0}
                         height={0}
-                        className={` w-full h-full object-cover`}
+                        className={`object-cover`}
+                      />
+                    </div>
+                  </div>
+                </Link>
+              )
+            )} */}
+
+            {workExamples.map(
+              ({ id, image, title, desc, webdesignImage }, index) => (
+                <Link key={id} href={`/our-work/${id}`}>
+                  <div
+                    className={`${
+                      index % 2 === 0 ? "ml-5 md:ml-10" : "mr-5 md:mr-10"
+                    } w-full flex flex-col items-center justify-between gap-2 mt-10`}
+                  >
+                    <div className="w-full">
+                      <Image
+                        src={image}
+                        alt="project image"
+                        width={0}
+                        height={0}
+                        className="w-full h-full md:h-[27rem] 2xl:h-[35rem]"
+                      />
+                    </div>
+
+                    <div className="w-full flex flex-col md:flex-row md:gap-10 items-center justify-between">
+                      <div className="flex flex-col">
+                        <h2
+                          className={`${libre.className} text-[#FF0000] font-[700] text-[2rem]`}
+                        >
+                          {title}
+                        </h2>
+                        <p
+                          className={`${spaceGrotesk.className} font-[400] text-[1rem]`}
+                        >
+                          {desc}
+                        </p>
+                      </div>
+
+                      <Image
+                        src={webdesignImage}
+                        alt=""
+                        width={0}
+                        height={0}
+                        className="object-cover"
                       />
                     </div>
                   </div>
@@ -98,8 +147,6 @@ export default function OurWork() {
               )
             )}
           </div>
-
-          <div className={``}></div>
         </div>
       </div>
     </div>

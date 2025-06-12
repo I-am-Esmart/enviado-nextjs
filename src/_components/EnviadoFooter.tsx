@@ -34,7 +34,7 @@ const EnviadoFooter = () => {
 
   return (
     <footer
-      className={`${spaceGrotesk.className} bg-[url('/assets/FooterBackground.png')] bg-center bg-cover bg-no-repeat overflow-hidden min-h-[80vh] h-full w-full text-white p-4 flex flex-col justify-between`}
+      className={`${spaceGrotesk.className} bg-[url('/assets/FooterBackground.png')] bg-center bg-cover bg-no-repeat overflow-hidden min-h-[80vh] h-full w-full text-white p-4 flex flex-col justify-between`}
     >
       <div
         className={`w-[70%] md:w-[40%] lg-[30%] flex justify-between text-[1rem]`}
@@ -58,13 +58,13 @@ const EnviadoFooter = () => {
       </div>
 
       <div
-        className={`${libre.className}  text-[5rem] md:text-[10rem] font-[700] italic`}
+        className={`${libre.className}  text-[5rem] md:text-[12rem] font-[700] italic`}
       >
         <p>Enviado</p>
       </div>
 
       <div className={`w-full justify-center items-center cursor-pointer`}>
-        <div className={`w-[70%] flex gap-2 md:gap-5 `}>
+        <div className={`w-[70%] flex gap-2 md:gap-10 lg:gap-15 `}>
           {socialLinks.map((link) => (
             <div
               className={`flex items-center justify-center gap-x-1`}

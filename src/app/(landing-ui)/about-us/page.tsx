@@ -69,9 +69,10 @@ export default function AboutUs(props: Props) {
             <div className="w-full flex justify-center items-center">
               <div className="w-full flex flex-col gap-10 text-white font-bold">
                 <h1
-                  className={`${libre.className} w-full md:w-[90%] 2xl-[75%] text-[2.1rem] md:text-[4.5rem] font-extrabold`}
+                  className={`${libre.className} w-full text-[2.1rem] md:text-[5rem] font-extrabold`}
                 >
-                  We specialize in digital experience for a better product
+                  We specialize in digital <br /> experience for a better <br />
+                  product
                 </h1>
               </div>
             </div>
@@ -81,6 +82,7 @@ export default function AboutUs(props: Props) {
               >
                 <p>
                   We don't just come up with ideas, products or experiences that
+                  <br />
                   push boundaries and challenge the status quo.
                 </p>
               </div>

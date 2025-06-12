@@ -104,6 +104,7 @@ export default function MobileMenu() {
             } else {
               return (
                 <Link
+                  onClick={handleCloseNavDropdown}
                   key={link.id}
                   href={link.linkRoute}
                   className={`mx-4 text-2xl font-medium py-2 px-4 ${
@@ -187,51 +188,6 @@ export default function MobileMenu() {
                 >
                   Hello,
                 </p>
-
-                {/* <div
-                  className={`${spaceGrotesk.className} ml-5 mt-5 text-[1rem] font-400 `}
-                >
-                  <div className={``}>
-                    <p className={` text-[#000000] font-light`}>My name is</p>
-                    <input
-                      type="text"
-                      placeholder="John Doe"
-                      className={`w-full md:w-1/2`}
-                    />
-                  </div>
-
-                  <div className={`mt-2`}>
-                    <p className={` text-[#000000] font-light`}>I work for</p>
-                    <input
-                      type="text"
-                      placeholder="Company / Business name"
-                      className={`w-full md:w-1/2`}
-                    />
-                  </div>
-
-                  <div className={`mt-2`}>
-                    <p className={` text-[#000000] font-light`}>
-                      Here is my email
-                    </p>
-                    <input
-                      type="text"
-                      placeholder="example@gmail.com"
-                      className={`w-full md:w-1/2`}
-                    />
-                  </div>
-
-                  <div className={`mt-2`}>
-                    <p className={` text-[#000000] font-light`}>
-                      And I have a message for you
-                    </p>
-                    <textarea
-                      rows={10}
-                      name="message"
-                      placeholder="Enter your message"
-                      className={`w-full md:w-1/2`}
-                    />
-                  </div>
-                </div> */}
 
                 <div
                   className={`${spaceGrotesk.className} flex flex-col gap-y-5 ml-5 mt-5 text-[1rem] font-400 `}

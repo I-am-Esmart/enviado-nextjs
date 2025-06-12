@@ -20,53 +20,66 @@ export default function EnviadoOurWorksHeader() {
 
   return (
     <>
-      <div className="min-h-screen bg-[url('/assets/landingImage.png')] bg-center bg-cover bg-no-repeat py-10">
-        <div className="w-full 2xl:w-[75%] h-screen px-10 py-5 flex flex-col justify-center items-center">
-          <div className="w-full flex justify-center items-center">
-            <div className="w-full flex flex-col gap-10 text-white font-bold uppercase">
-              <h1
-                className={`${libre.className} w-full md:w-[50%] lg:w-[30%] font-extrabold text-5xl  md:text-7xl`}
-              >
-                Our 360º
-              </h1>
-              <h1
-                className={`w-full ${libre.className} text-5xl md:w-[50%] lg:w-[30%] md:text-7xl`}
-              >
-                results
-              </h1>
+      <div
+        className={
+          'h-screen bg-[url("/assets/landingImage.png")] bg-center bg-cover bg-no-repeat py-10'
+        }
+      >
+        <div className="w-full overflow-hidden h-screen flex flex-col justify-center items-center">
+          <div
+            className={`w-[80%] 2xl:w-[65%] h-screen flex flex-col justify-center items-center`}
+          >
+            <div className="w-full flex justify-center items-center">
+              <div className="w-full flex flex-col gap-10 text-white font-bold uppercase">
+                <h1
+                  className={`${libre.className} w-full font-extrabold text-6xl md:text-7xl lg:text-8xl`}
+                >
+                  Our 360º
+                </h1>
+
+                <div className={`flex flex-col md:flex-row`}>
+                  <h1
+                    className={`w-full ${libre.className} text-6xl  md:text-7xl lg:text-8xl md:w-[50%] lg:w-[30%]`}
+                  >
+                    results
+                  </h1>
+
+                  <div className="w-[50%] flex items-end justify-end">
+                    <Image
+                      src={ArrowImage}
+                      alt="arrow image"
+                      width={0}
+                      height={0}
+                      className="w-[7rem] rotate-[20deg] md:rotate-0 md:w-[12rem] ml-2 xl:ml-5"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="w-[50%] flex items-center justify-end">
-            <Image
-              src={ArrowImage}
-              alt="arrow image"
-              width={0}
-              height={0}
-              className="w-[7rem] rotate-[20deg] md:rotate-0 md:w-[12rem] ml-2 xl:ml-5"
-            />
-          </div>
-          <div className="w-full mt-2 py-5 flex flex-col-reverse md:flex-row md:items-start text-[1rem]">
-            <div
-              className={`w-full ${spaceGrotesk.className} text-white text-[1.2rem] font-[400]`}
-            >
-              <p>
-                We do great work!!! <br />
-                See below some of the work we have done and landmark we have
-                achieved.
-              </p>
-            </div>
-            <div className="w-full flex items-center justify-end py-4">
-              <button
-                onClick={() =>
-                  document
-                    .getElementById("links")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className={`w-2/4 ${spaceGrotesk.className} flex items-center justify-center gap-2 bg-white text-[#970029] text-[1rem] font-normal p-[0.8rem]`}
+
+            <div className="w-full mt-2 py-5 flex flex-col-reverse md:flex-row md:items-start text-[1rem]">
+              <div
+                className={`w-full ${spaceGrotesk.className} text-white text-[1.2rem] md:text-[1.5rem] font-[400]`}
               >
-                <Image src={ButtonImage} alt="arrow" width={0} height={0} />
-                Explore
-              </button>
+                <p>
+                  We do great work!!! <br />
+                  See below some of the work we have done and landmark we have
+                  achieved.
+                </p>
+              </div>
+              <div className="w-full flex items-center justify-end py-4">
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("links")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className={`w-2/4 ${spaceGrotesk.className} flex items-center justify-center gap-2 bg-white text-[#970029] text-[1rem] md:text-[1.7rem] font-normal p-[0.8rem] `}
+                >
+                  <Image src={ButtonImage} alt="arrow" width={0} height={0} />
+                  Explore
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -74,7 +87,7 @@ export default function EnviadoOurWorksHeader() {
 
       <div
         id="links"
-        className={`w-full flex items-center justify-center mt-15`}
+        className={`w-full md:w-[80%] flex items-center justify-end mt-15`}
       >
         <div
           className={`w-[80%] 2xl:w-[65%] flex flex-wrap gap-x-2 md:gap-x-10 items-center justify-start`}
