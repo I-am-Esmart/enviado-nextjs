@@ -1,12 +1,12 @@
-import { libre, spaceGrotesk } from "@/utilities/customFonts";
-import { LiaTimesSolid } from "react-icons/lia";
+import { libre, spaceGrotesk } from "@/utilities/customFonts"
+import { LiaTimesSolid } from "react-icons/lia"
 type EnviadoModalProps = {
-  isEnviadoModalOpen: boolean;
-  modalMdWidth?: number;
-  modalWidth?: number;
-  onClose: () => void;
-  children: React.ReactNode;
-};
+  isEnviadoModalOpen: boolean
+  modalMdWidth?: number
+  modalWidth?: number
+  onClose: () => void
+  children: React.ReactNode
+}
 
 export default function EnviadoModal({
   isEnviadoModalOpen,
@@ -16,7 +16,7 @@ export default function EnviadoModal({
   children,
 }: EnviadoModalProps) {
   // If the modal is not open, return null to avoid rendering anything
-  if (!isEnviadoModalOpen) return null;
+  if (!isEnviadoModalOpen) return null
 
   return (
     <div className={`fixed z-50 inset-0 flex justify-center items-center`}>
@@ -25,7 +25,7 @@ export default function EnviadoModal({
       <div
         className={`relative bg-white w-[${modalWidth}%] md:w-[${modalMdWidth}%] py-3 px-5 rounded-lg z-10`}
       >
-        <div className={`w-full relative z-50 flex justify-end`}>
+        <div className={`w-full flex justify-end`}>
           <button
             onClick={onClose}
             className={`${libre.className} bg-[#93002A] flex items-center gap-1 p-2 text-white`}
@@ -38,5 +38,5 @@ export default function EnviadoModal({
         <section>{children}</section>
       </div>
     </div>
-  );
+  )
 }
