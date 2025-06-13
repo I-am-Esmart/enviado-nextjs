@@ -4,6 +4,7 @@ import Image from "next/image";
 import ArrowImage from "/public/assets/Arrow.png";
 import ButtonImage from "/public/assets/ButtonImage.png";
 import Link from "next/link";
+import { useModalContext } from "@/context/ModalContext";
 
 const HeroSection = () => {
   const threeTransition = {
@@ -29,6 +30,8 @@ const HeroSection = () => {
   };
   const solutionInitial = { x: 100, opacity: 0 };
   const solutionAnimate = { x: 0, opacity: 1 };
+
+  const { handleOPenModal } = useModalContext();
 
   return (
     <section
@@ -98,6 +101,7 @@ const HeroSection = () => {
           >
             <div className={`md:w-[30%] flex justify-end md:justify-start`}>
               <button
+                onClick={handleOPenModal}
                 className={`w-36 h-12 flex items-center justify-center bg-white space-x-2 text-base md:w-40 md:text-lg`}
               >
                 <span
@@ -111,9 +115,8 @@ const HeroSection = () => {
                     className={`w-full h-full object-cover`}
                   />
                 </span>
-                <Link href="/contact-us">
-                  <span className={`text-[#93002A]`}>Let's talk</span>
-                </Link>
+
+                <span className={`text-[#93002A]`}>Let's talk</span>
               </button>
             </div>
 

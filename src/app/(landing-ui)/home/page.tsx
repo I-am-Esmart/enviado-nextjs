@@ -25,6 +25,8 @@ import Link from "next/link";
 import WhatWeDoSection from "@/_components/landing-page/WhatWeDoSection";
 import HeroSection from "@/_components/landing-page/HeroSection";
 
+import { useModalContext } from "@/context/ModalContext";
+
 export default function Home() {
   // const [isScrolledY, setIsScrolledY] = useState<boolean>(false);
   const [ideas, setIdeas] = useState<boolean>(false);
@@ -34,6 +36,8 @@ export default function Home() {
   const ideasRef = useRef<HTMLDivElement | null>(null);
   const createsRef = useRef<HTMLDivElement | null>(null);
   const resultsRef = useRef<HTMLDivElement | null>(null);
+
+  const { handleOPenModal } = useModalContext();
 
   const whatWeDoItems = [
     {
@@ -353,11 +357,11 @@ export default function Home() {
             </p>
           </div>
           <button
+            onClick={handleOPenModal}
             className={`bg-[#000000] text-[#FFFFFF] p-4 flex items-center justify-center gap-2 md:font-[700]`}
           >
-            <Link href={"/contact-us"}>
-              <p>Send a Message </p>
-            </Link>
+            <p>Send a Message </p>
+
             <div>
               <FaArrowRightLong />
             </div>

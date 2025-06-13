@@ -2,6 +2,7 @@ import { libre, spaceGrotesk } from "@/utilities/customFonts";
 import { LiaTimesSolid } from "react-icons/lia";
 type EnviadoModalProps = {
   isEnviadoModalOpen: boolean;
+  modalMdWidth?: number;
   modalWidth?: number;
   onClose: () => void;
   children: React.ReactNode;
@@ -10,6 +11,7 @@ type EnviadoModalProps = {
 export default function EnviadoModal({
   isEnviadoModalOpen,
   onClose,
+  modalMdWidth,
   modalWidth,
   children,
 }: EnviadoModalProps) {
@@ -21,7 +23,7 @@ export default function EnviadoModal({
       <div className="w-full absolute inset-0 bg-[#101010] opacity-75 backdrop-blur-sm"></div>
 
       <div
-        className={`relative bg-white w-[${modalWidth}%] py-3 px-5 rounded-lg z-10`}
+        className={`relative bg-white w-[${modalWidth}%] md:w-[${modalMdWidth}%] py-3 px-5 rounded-lg z-10`}
       >
         <div className={`w-full relative z-50 flex justify-end`}>
           <button
