@@ -3,6 +3,7 @@ import { div } from "motion/react-client";
 import Link from "next/link";
 import { FaArrowUp } from "react-icons/fa";
 import FooterBackground from "/public/assets/FooterBackground.png";
+import { useModalContext } from "@/context/ModalContext";
 
 const EnviadoFooter = () => {
   const socialLinks = [
@@ -31,13 +32,14 @@ const EnviadoFooter = () => {
       img: <FaArrowUp />,
     },
   ];
+  const { handleOPenModal } = useModalContext();
 
   return (
     <footer
       className={`${spaceGrotesk.className} bg-[url('/assets/FooterBackground.png')] bg-center bg-cover bg-no-repeat overflow-hidden min-h-[80vh] h-full w-full text-white p-4 flex flex-col justify-between`}
     >
       <div
-        className={`w-[70%] md:w-[40%] lg-[30%] flex justify-between text-[1rem]`}
+        className={`w-[70%] md:w-[40%] lg-[30%] flex justify-between text-[1rem] cursor-pointer`}
       >
         <div className={``}>
           <p>
@@ -51,9 +53,7 @@ const EnviadoFooter = () => {
           <p>
             <Link href={"/service"}>Service</Link>
           </p>
-          <p>
-            <Link href={"/contact-us"}>Contact Us</Link>
-          </p>
+          <p onClick={handleOPenModal}>Contact Us</p>
         </div>
       </div>
 

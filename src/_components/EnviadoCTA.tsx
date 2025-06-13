@@ -4,10 +4,13 @@ import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Link from "next/link";
 import HandPointing from "/public/assets/HandPointing.png";
+import { useModalContext } from "@/context/ModalContext";
 
 type Props = {};
 
 const EnviadoCTA = (props: Props) => {
+  const { handleOPenModal } = useModalContext();
+
   return (
     <>
       <div
@@ -29,13 +32,13 @@ const EnviadoCTA = (props: Props) => {
           <div
             className={`w-[80%] flex flex-col items-end justify-center md:gap-y-0`}
           >
-            <Link href={"/contact-us"}>
-              <button
-                className={`${libre.className} text-end bg-[#000000] flex items-center justify-center gap-2 p-4 mr-10 md:mr-0 text-[#FFFFFF]`}
-              >
-                <span>Send a Message </span> <FaArrowRightLong />
-              </button>
-            </Link>
+            <button
+              onClick={handleOPenModal}
+              className={`${libre.className} text-end bg-[#000000] flex items-center justify-center gap-2 p-4 mr-10 md:mr-0 text-[#FFFFFF]`}
+            >
+              <span>Send a Message </span> <FaArrowRightLong />
+            </button>
+
             <h2
               className={`${libre.className} text-right text-[#000000] font-[600] text-[2rem] md:text-[4rem] mr-10 md:mr-0`}
             >

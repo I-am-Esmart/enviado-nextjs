@@ -9,12 +9,16 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { LiaTimesSolid } from "react-icons/lia";
-import EnviadoModal from "./EnviadoModal";
+import { useModalContext } from "@/context/ModalContext";
+
+// import EnviadoModal from "./EnviadoModal";
 
 const EnviadoNav = () => {
   const [isScrolledY, setIsScrolledY] = useState<boolean>(false);
-  const [isModalOPen, setIsModalOpen] = useState<boolean>(false);
+  // const [isModalOPen, setIsModalOpen] = useState<boolean>(false);
   const pathName = usePathname();
+
+  const { handleCloseModal, handleOPenModal } = useModalContext();
 
   const handleSendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,16 +37,12 @@ const EnviadoNav = () => {
 
     if (response.ok) {
       console.log("Email sent successfully!");
-      setIsModalOpen(false);
+      handleCloseModal();
     } else {
       console.log("Failed to send email.");
     }
     // Reset the form or perform any other actions after sending the email
     e.currentTarget.reset(); // Reset the form fields
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
   };
 
   const { handleOPenNavDropdown, isNavDropdownOpen, handleCloseNavDropdown } =
@@ -72,7 +72,7 @@ const EnviadoNav = () => {
     {
       id: 5,
       linkName: "Contact Us",
-      linkRoute: "/contact-us",
+      linkRoute: "contact-us",
     },
   ];
 
@@ -115,10 +115,10 @@ const EnviadoNav = () => {
           className={`hidden bg-white h-[80%] md:inline-flex items-center justify-between space-x-8`}
         >
           {links.map((link) => {
-            if (link.linkRoute === "/contact-us") {
+            if (link.linkRoute === "contact-us") {
               return (
                 <div
-                  onClick={() => setIsModalOpen(true)}
+                  onClick={handleOPenModal}
                   key={link.id}
                   className="mx-4 text-base font-medium py-2 px-4 cursor-pointer text-[#93002A]"
                 >
@@ -160,10 +160,11 @@ const EnviadoNav = () => {
         </div>
       </nav>
 
-      <EnviadoModal
+      {/* <EnviadoModal
         isEnviadoModalOpen={isModalOPen}
         onClose={closeModal}
-        modalWidth={50}
+        modalWidth={80}
+        modalMdWidth={50}
       >
         <div className={"w-full flex md:justify-center md:items-center"}>
           <form
@@ -182,14 +183,14 @@ const EnviadoNav = () => {
 
             <section className={`w-full h-[50vh]`}>
               <div
-                className={`w-full max-h-full overflow-auto 
+                className={`w-[98%] max-h-full overflow-y-auto 
                 [&::-webkit-scrollbar]:w-1.5
                 [&::-webkit-scrollbar-track]:bg-gray-200
                 [&::-webkit-scrollbar-thumb]:bg-[#93002A]
                 [&::-webkit-scrollbar-thumb]:rounded`}
               >
                 <div
-                  className={`${spaceGrotesk.className} w-full flex flex-col items-center justify-center gap-4 mt-5 text-[1rem] font-400`}
+                  className={`${spaceGrotesk.className} flex flex-col items-center justify-center gap-4 mt-5 text-[1rem] font-400`}
                 >
                   <div className="w-full flex flex-col md:flex-row gap-2">
                     <div className="w-full md:w-1/2 bg-[#f8f8f8] flex items-center gap-2 p-2">
@@ -223,16 +224,16 @@ const EnviadoNav = () => {
                 </p>
 
                 <div
-                  className={`${spaceGrotesk.className} flex flex-col gap-y-5 ml-5 mt-5 text-[1rem] font-400 `}
+                  className={`${spaceGrotesk.className} py-4 w-full flex flex-col gap-y-5 ml-5 mt-5 text-[1rem] font-400 `}
                 >
-                  <div className={`flex flex-col gap-y-5`}>
+                  <div className={`w-full flex flex-col gap-y-5`}>
                     <p className={`text-[#000000] text-3xl font-light`}>
                       My name is
                     </p>
                     <input
                       type="text"
                       placeholder="John Doe"
-                      className={`w-full md:w-2/3 text-4xl opacity-20 font-medium`}
+                      className={`w-full md:w-2/3 p-3 text-xl md:text-3xl opacity-20 font-medium border-2 border-[#c1c1c1] outline-none focus:outline-none`}
                     />
                   </div>
 
@@ -243,7 +244,7 @@ const EnviadoNav = () => {
                     <input
                       type="text"
                       placeholder="Company name"
-                      className={`w-full md:w-2/3 text-4xl opacity-20 font-medium`}
+                      className={`w-full md:w-2/3 p-3 text-xl md:text-3xl opacity-20 font-medium border-2 border-[#c1c1c1] outline-none focus:outline-none`}
                     />
                   </div>
 
@@ -254,19 +255,18 @@ const EnviadoNav = () => {
                     <input
                       type="text"
                       placeholder="example@gmail.com"
-                      className={`w-full md:w-2/3 text-4xl opacity-20 font-medium`}
+                      className={`w-full md:w-2/3 p-3 text-xl md:text-3xl opacity-20 font-medium border-2 border-[#c1c1c1] outline-none focus:outline-none`}
                     />
                   </div>
 
-                  <div className={`flex flex-col gap-y-5`}>
+                  <div className={`w-[98%] flex flex-col gap-y-5`}>
                     <p className={`text-[#000000] text-3xl font-light`}>
                       And I have a message for you
                     </p>
                     <textarea
-                      rows={10}
                       name="message"
                       placeholder="Enter your message"
-                      className={`w-full md:w-2/3 text-4xl opacity-20 font-medium`}
+                      className={`w-full md:w-2/3 p-3 text-xl md:text-3xl opacity-20 font-medium border-2 border-[#c1c1c1] outline-none focus:outline-none`}
                     />
                   </div>
                 </div>
@@ -281,7 +281,7 @@ const EnviadoNav = () => {
             </button>
           </form>
         </div>
-      </EnviadoModal>
+      </EnviadoModal> */}
     </>
   );
 };
