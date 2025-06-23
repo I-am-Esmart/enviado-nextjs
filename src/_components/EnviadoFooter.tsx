@@ -1,9 +1,9 @@
-import { libre, spaceGrotesk } from "@/utilities/customFonts";
-import { div } from "motion/react-client";
-import Link from "next/link";
-import { FaArrowUp } from "react-icons/fa";
-import FooterBackground from "/public/assets/FooterBackground.png";
-import { useModalContext } from "@/context/ModalContext";
+import { libre, spaceGrotesk } from "@/utilities/customFonts"
+import { div } from "motion/react-client"
+import Link from "next/link"
+import { FaArrowUp } from "react-icons/fa"
+import FooterBackground from "/public/assets/FooterBackground.png"
+import { useModalContext } from "@/context/ModalContext"
 
 const EnviadoFooter = () => {
   const socialLinks = [
@@ -31,15 +31,15 @@ const EnviadoFooter = () => {
       linkRoute: "https://www.facebook.com/profile.php?id=61575266797322",
       img: <FaArrowUp />,
     },
-  ];
-  const { handleOPenModal } = useModalContext();
+  ]
+  const { handleOPenModal } = useModalContext()
 
   return (
     <footer
       className={`${spaceGrotesk.className} bg-[url('/assets/FooterBackground.png')] bg-center bg-cover bg-no-repeat overflow-hidden min-h-[80vh] h-full w-full text-white p-4 flex flex-col justify-between`}
     >
       <div
-        className={`w-[70%] md:w-[40%] lg-[30%] flex justify-between text-[1rem] cursor-pointer`}
+        className={`w-[70%] md:w-[40%] lg-[30%] mt-15 flex justify-between text-[1rem] cursor-pointer`}
       >
         <div className={``}>
           <p>
@@ -58,12 +58,14 @@ const EnviadoFooter = () => {
       </div>
 
       <div
-        className={`${libre.className}  text-[5rem] md:text-[12rem] font-[700] italic`}
+        className={`${libre.className}  text-[5rem] md:text-[12rem] xl:text-[15rem] font-[700] italic`}
       >
         <p>Enviado</p>
       </div>
 
-      <div className={`w-full justify-center items-center cursor-pointer`}>
+      <div
+        className={`w-full justify-center items-center cursor-pointer md:mb-3`}
+      >
         <div className={`w-[70%] flex gap-2 md:gap-10 lg:gap-15 `}>
           {socialLinks.map((link) => (
             <div
@@ -107,7 +109,7 @@ const EnviadoFooter = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default EnviadoFooter;
+export default EnviadoFooter
