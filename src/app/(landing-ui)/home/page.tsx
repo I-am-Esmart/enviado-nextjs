@@ -1,43 +1,44 @@
-"use client";
-import { motion } from "framer-motion";
-import Nav from "@/_components/EnviadoNav";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { libre, spaceGrotesk } from "@/utilities/customFonts";
-import { useEffect, useState } from "react";
-import { useRef } from "react";
-import Image from "next/image";
-import ArrowImage from "/public/assets/Arrow.png";
-import ButtonImage from "/public/assets/ButtonImage.png";
-import FourBoxesImage from "/public/assets/FourBoxesImage.png";
-import { FaArrowRightLong } from "react-icons/fa6";
-import DeepspaceImage from "/public/assets/Deepspace.png";
-import EridianImage from "/public/assets/Eridian.png";
-import LolaImage from "/public/assets/Lola.png";
-import WebDesignImage from "/public/assets/WebDesignImage.png";
-import CircleImage from "/public/assets/CircleImage.png";
-import CoiledArrow from "/public/assets/CoiledArrow.png";
-import Pentagon_Image from "/public/assets/PentagonImage.png";
-import LoveImage from "/public/assets/LoveImage.png";
-import ArrowUp from "/public/assets/ArrowUp.png";
-import LeftPointedArrow from "/public/assets/LeftPointedArrow.png";
-import Link from "next/link";
-import WhatWeDoSection from "@/_components/landing-page/WhatWeDoSection";
-import HeroSection from "@/_components/landing-page/HeroSection";
+"use client"
+import { motion } from "framer-motion"
+import Nav from "@/_components/EnviadoNav"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
-import { useModalContext } from "@/context/ModalContext";
+import { libre, spaceGrotesk } from "@/utilities/customFonts"
+import { useEffect, useState } from "react"
+import { useRef } from "react"
+import Image from "next/image"
+import ArrowImage from "/public/assets/Arrow.png"
+import ButtonImage from "/public/assets/ButtonImage.png"
+import FourBoxesImage from "/public/assets/FourBoxesImage.png"
+import { FaArrowRightLong } from "react-icons/fa6"
+import DeepspaceImage from "/public/assets/Deepspace.png"
+import EridianImage from "/public/assets/Eridian.png"
+import LolaImage from "/public/assets/Lola.png"
+import WebDesignImage from "/public/assets/WebDesignImage.png"
+import CircleImage from "/public/assets/CircleImage.png"
+import CoiledArrow from "/public/assets/CoiledArrow.png"
+import Pentagon_Image from "/public/assets/PentagonImage.png"
+import LoveImage from "/public/assets/LoveImage.png"
+import ArrowUp from "/public/assets/ArrowUp.png"
+import LeftPointedArrow from "/public/assets/LeftPointedArrow.png"
+import Link from "next/link"
+import WhatWeDoSection from "@/_components/landing-page/WhatWeDoSection"
+import HeroSection from "@/_components/landing-page/HeroSection"
+
+import { useModalContext } from "@/context/ModalContext"
 
 export default function Home() {
   // const [isScrolledY, setIsScrolledY] = useState<boolean>(false);
-  const [ideas, setIdeas] = useState<boolean>(false);
-  const [creates, setCreates] = useState<boolean>(false);
-  const [results, setResults] = useState<boolean>(false);
+  const [ideas, setIdeas] = useState<boolean>(false)
+  const [creates, setCreates] = useState<boolean>(false)
+  const [results, setResults] = useState<boolean>(false)
 
-  const ideasRef = useRef<HTMLDivElement | null>(null);
-  const createsRef = useRef<HTMLDivElement | null>(null);
-  const resultsRef = useRef<HTMLDivElement | null>(null);
+  const ideasRef = useRef<HTMLDivElement | null>(null)
+  const createsRef = useRef<HTMLDivElement | null>(null)
+  const resultsRef = useRef<HTMLDivElement | null>(null)
 
-  const { handleOPenModal } = useModalContext();
+  const { handleOPenModal } = useModalContext()
 
   const whatWeDoItems = [
     {
@@ -64,7 +65,7 @@ export default function Home() {
       title: "AMPLIFY",
       desc: "Through targeted amplification strategies, we ensure your message reaches the right audience at the right time, expanding your brand’s presence and driving sustained growth.",
     },
-  ];
+  ]
 
   const workExamples = [
     {
@@ -88,7 +89,7 @@ export default function Home() {
       desc: "Banking Nigeria’s Unbanked Grassroots",
       webdesignImage: WebDesignImage,
     },
-  ];
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,32 +97,32 @@ export default function Home() {
         { ref: ideasRef, setter: setIdeas },
         { ref: createsRef, setter: setCreates },
         { ref: resultsRef, setter: setResults },
-      ];
+      ]
 
-      const middle = window.innerHeight / 2;
-      let activeFound = false;
+      const middle = window.innerHeight / 2
+      let activeFound = false
 
       refs.forEach(({ ref, setter }) => {
         const isVisible =
           ref.current &&
           ref.current.getBoundingClientRect().top <= middle &&
-          ref.current.getBoundingClientRect().bottom >= middle;
+          ref.current.getBoundingClientRect().bottom >= middle
 
         if (isVisible && !activeFound) {
-          setter(true);
-          activeFound = true;
+          setter(true)
+          activeFound = true
         } else {
-          setter(false);
+          setter(false)
         }
-      });
-    };
+      })
+    }
 
     if (typeof window !== "undefined") {
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      handleScroll();
-      return () => window.removeEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll, { passive: true })
+      handleScroll()
+      return () => window.removeEventListener("scroll", handleScroll)
     }
-  }, []);
+  }, [])
 
   return (
     <div className={``}>
@@ -148,6 +149,7 @@ export default function Home() {
             />
           </div>
 
+          {/* WHAT We Do Section */}
           <WhatWeDoSection />
 
           <section
@@ -238,7 +240,6 @@ export default function Home() {
               />
             </div>
           </section>
-
           <div className={`w-[90%] md:w-[80%] md:mt-30`}>
             <div className={``}>
               <h2
@@ -264,7 +265,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-
           <div className={`w-[90%] md:w-[80%] xl-[60%] mx-auto mb-20`}>
             {workExamples.map(({ id, image, title, desc, webdesignImage }) => (
               <div
@@ -308,7 +308,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-
           <div className={``}></div>
         </div>
       </div>
@@ -401,5 +400,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-  );
+  )
 }

@@ -48,3 +48,15 @@ button {
   scrollbar-width: thin;
   scrollbar-color: rgba(151, 0, 41, 0.8) transparent;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply bg-[#ffffff] text-[#101010] p-2 md:p-3 rounded-full transition;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.2rem !important; /* override default arrow size */
+  font-weight: bold !important;
+  color: #101010 !important; /* arrow color */
+}
