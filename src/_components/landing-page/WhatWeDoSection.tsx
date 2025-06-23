@@ -86,7 +86,7 @@ const WhatWeDoSection = () => {
                   IMAGINATION
                 </h4>
                 <p
-                  className={`${spaceGrotesk.className} mt-2 font-normal text-sm md:text-base`}
+                  className={`${spaceGrotesk.className} mt-2 font-normal text-base`}
                 >
                   We work closely with you to understand your brand's unique
                   voice and goals. Together, we dream big and build the
@@ -125,7 +125,7 @@ const WhatWeDoSection = () => {
                   DISCOVERY
                 </h4>
                 <p
-                  className={`${spaceGrotesk.className} mt-2 font-normal text-sm md:text-base`}
+                  className={`${spaceGrotesk.className} mt-2 font-normal text-base`}
                 >
                   We dive into market trends, audience behaviors, and
                   competitive analysis to uncover unique opportunities that will
@@ -171,7 +171,7 @@ const WhatWeDoSection = () => {
                   EXECUTE
                 </h4>
                 <p
-                  className={`${spaceGrotesk.className} mt-2 font-normal text-sm md:text-base`}
+                  className={`${spaceGrotesk.className} mt-2 font-normal text-base`}
                 >
                   where strategy meets creativity, and ideas come to life. Our
                   team of experts meticulously crafts and deploys campaigns that
@@ -202,7 +202,7 @@ const WhatWeDoSection = () => {
                   AMPLIFY
                 </h4>
                 <p
-                  className={`${spaceGrotesk.className} mt-2 font-normal text-sm md:text-base`}
+                  className={`${spaceGrotesk.className} mt-2 font-normal text-base`}
                 >
                   Through targeted amplification strategies, we ensure your
                   message reaches the right audience at the right time,
