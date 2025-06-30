@@ -1,25 +1,25 @@
-"use client";
+"use client"
 
-import EnviadoFooter from "@/_components/EnviadoFooter";
-import EnviadoNav from "@/_components/EnviadoNav";
-import MobileMenu from "@/_components/MobileMenu";
-import EnviadoModal from "@/_components/EnviadoModal";
-import { libre, spaceGrotesk } from "@/utilities/customFonts";
-import { GoArrowRight } from "react-icons/go";
-import SuccessModalImage from "/public/assets/SuccessModalImage.png";
-import toast from "react-hot-toast";
+import EnviadoFooter from "@/_components/EnviadoFooter"
+import EnviadoNav from "@/_components/EnviadoNav"
+import MobileMenu from "@/_components/MobileMenu"
+import EnviadoModal from "@/_components/EnviadoModal"
+import { libre, spaceGrotesk } from "@/utilities/customFonts"
+import { GoArrowRight } from "react-icons/go"
+import SuccessModalImage from "/public/assets/SuccessModalImage.png"
+import toast from "react-hot-toast"
 
-import { useModalContext } from "@/context/ModalContext";
-import { useState } from "react";
-import Image from "next/image";
+import { useModalContext } from "@/context/ModalContext"
+import { useState } from "react"
+import Image from "next/image"
 
 export default function LandingUiLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-  const { isModalOpen, handleCloseModal } = useModalContext();
-  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const { isModalOpen, handleCloseModal } = useModalContext()
+  const [showSuccessModal, setShowSuccessModal] = useState(false)
 
   const [formData, setFormData] = useState({
     name: "",
@@ -32,16 +32,16 @@ export default function LandingUiLayout({
       motionGraphics: false,
       marketingAds: false,
     },
-  });
+  })
 
-  const closeModal = () => handleCloseModal();
+  const closeModal = () => handleCloseModal()
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
 
   const handleCheckboxChange = (service: keyof typeof formData.services) => {
     setFormData((prev) => ({
@@ -50,26 +50,26 @@ export default function LandingUiLayout({
         ...prev.services,
         [service]: !prev.services[service],
       },
-    }));
-  };
+    }))
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
     try {
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-      });
+      })
 
-      const result = await res.json();
+      const result = await res.json()
 
       if (result.success) {
         // alert("Message sent successfully!");
         // toast.success("fform submitted successfully.");
-        setShowSuccessModal(true);
-        closeModal();
+        setShowSuccessModal(true)
+        closeModal()
         setFormData({
           name: "",
           company: "",
@@ -81,15 +81,15 @@ export default function LandingUiLayout({
             motionGraphics: false,
             marketingAds: false,
           },
-        });
+        })
       } else {
-        toast.error("Failed to send. Please try again later.");
+        toast.error("Failed to send. Please try again later.")
       }
     } catch (error) {
-      console.error("Form submit error:", error);
-      toast.error("An unexpected error occurred.");
+      console.error("Form submit error:", error)
+      toast.error("An unexpected error occurred.")
     }
-  };
+  }
 
   return (
     <section>
@@ -281,5 +281,5 @@ export default function LandingUiLayout({
       </div>
       <MobileMenu />
     </section>
-  );
+  )
 }

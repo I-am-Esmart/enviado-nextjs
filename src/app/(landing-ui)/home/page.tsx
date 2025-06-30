@@ -76,7 +76,7 @@ export default function Home() {
       work1: "web design",
       work2: "seo optimisation",
       work3: "content creation",
-      link: "http://getdeepr.co",
+      link: "https://www.instagram.com/gospelkonnectglobal?igsh=cGhtdnQ1NDhnczRh",
     },
     {
       id: 2,
@@ -86,7 +86,7 @@ export default function Home() {
       work1: "web design",
       work2: "brand design",
       work3: "app design & dev",
-      link: "https://www.instagram.com/gospelkonnectglobal?igsh=cGhtdnQ1NDhnczRh",
+      link: "http://getdeepr.co",
     },
   ]
 
