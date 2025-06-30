@@ -128,7 +128,3 @@ export default function OurWork() {
     </div>
   )
 }
-
-// ${
-//   index % 2 === 0 ? "md:ml-10" : "md:mr-10"
-// }
