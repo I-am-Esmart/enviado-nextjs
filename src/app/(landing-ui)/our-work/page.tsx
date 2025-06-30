@@ -1,22 +1,20 @@
-"use client";
-import { libre, spaceGrotesk } from "@/utilities/customFonts";
-import Image from "next/image";
-import { FaArrowRightLong } from "react-icons/fa6";
-import DeepspaceImage from "/public/assets/Deepspace.png";
-import EridianImage from "/public/assets/Eridian.png";
-import LolaImage from "/public/assets/Lola.png";
-import WebDesignImage from "/public/assets/WebDesignImage.png";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import WineKite from "/public/assets/WineKite.png";
-import EnviadoOurWorksHeader from "@/_components/EnviadoOurWorksHeader";
+"use client"
+import { libre, spaceGrotesk } from "@/utilities/customFonts"
+import Image from "next/image"
+import { FaArrowRightLong } from "react-icons/fa6"
+import GospelKonnectImage from "/public/assets/GospelKonnectImage.png"
+import DeeprImage from "/public/assets/DeeprImage.png"
+import { usePathname } from "next/navigation"
+import Link from "next/link"
+import WineKite from "/public/assets/WineKite.png"
+import EnviadoOurWorksHeader from "@/_components/EnviadoOurWorksHeader"
 
 // import { motion, useAnimation } from "framer-motion";
 // import { useInView } from "react-intersection-observer";
 // import { useEffect, useRef } from "react";
 
 export default function OurWork() {
-  const pathName = usePathname();
+  const pathName = usePathname()
 
   const links = [
     { name: "All Projects", route: "/our-works" },
@@ -24,31 +22,30 @@ export default function OurWork() {
     { name: "Marketing", route: "/our-works/marketing" },
     { name: "Motion Design", route: "/our-works/motion-design" },
     { name: "Graphics", route: "/our-works/graphics" },
-  ];
+  ]
 
   const workExamples = [
     {
-      id: "deepspace",
-      image: DeepspaceImage,
-      title: "DEEPSPACE",
-      desc: "A Bold Leap For Advanced Manufacturing In Africa",
-      webdesignImage: WebDesignImage,
+      id: 1,
+      image: GospelKonnectImage,
+      title: "GospelKonect Global",
+      desc: "Proclaiming the good news all over the earth.",
+      work1: "web design",
+      work2: "seo optimisation",
+      work3: "content creation",
+      link: "https://www.instagram.com/gospelkonnectglobal?igsh=cGhtdnQ1NDhnczRh",
     },
     {
-      id: "eridian",
-      image: EridianImage,
-      title: "Eridian",
-      desc: "A Higher Calling: Building Ventures With Purpose",
-      webdesignImage: WebDesignImage,
+      id: 2,
+      image: DeeprImage,
+      title: "Deepr App",
+      desc: "A better way to listen to sermon",
+      work1: "web design",
+      work2: "brand design",
+      work3: "app design & dev",
+      link: "http://getdeepr.co",
     },
-    {
-      id: "lola",
-      image: LolaImage,
-      title: "LOLA",
-      desc: "Banking Nigeria’s Unbanked Grassroots",
-      webdesignImage: WebDesignImage,
-    },
-  ];
+  ]
 
   return (
     <div className={``}>
@@ -57,11 +54,17 @@ export default function OurWork() {
       <div className={`min-h-screen w-full flex flex-col items-center mt-5`}>
         <div className="w-full flex flex-col items-center">
           <div className={`w-[90%] md:w-[80%] xl-[60%] mx-auto mb-20`}>
-            {/* {workExamples.map(
-              ({ id, image, title, desc, webdesignImage }, index) => (
-                <Link key={id} href={`/our-work/${id}`}>
+            {workExamples.map(
+              (
+                { id, image, title, desc, work1, work2, work3, link },
+                index
+              ) => (
+                <Link href={link} target="_blank" rel="noopener noreferrer">
                   <div
-                    className={`w-full flex flex-col items-center justify-between gap-2 mt-10`}
+                    key={id}
+                    className={`${
+                      index % 2 === 0 ? "md:ml-10" : "md:mr-10"
+                    } w-full flex flex-col items-center justify-between gap-2 mt-10`}
                   >
                     <div className={`w-full`}>
                       <Image
@@ -69,131 +72,63 @@ export default function OurWork() {
                         alt="project image"
                         width={0}
                         height={0}
-                        className={`w-full h-full md:h-[27rem] 2xl:h-[35rem]`}
+                        className={`w-full h-full object-cover`}
                       />
                     </div>
 
                     <div
-                      className={` w-full flex flex-col md:flex-row md:gap-10 items-center justify-between`}
+                      className={`w-full flex flex-col md:flex-row md:gap-10 items-start justify-center md:items-center`}
                     >
-                      <div className={` flex flex-col`}>
-                        <h2
-                          className={`${libre.className} text-[#FF0000] font-[700] text-[2rem]`}
+                      <div className="flex flex-col md:flex-row w-full items-stretch">
+                        <div className={`w-full md:w-[45%] flex flex-col`}>
+                          <h2
+                            className={`${libre.className} text-[#FF0000] font-[700] text-[1.5rem] md:text-[2rem]`}
+                          >
+                            {title}
+                          </h2>
+                          <p
+                            className={`${spaceGrotesk.className} font-[400] text-[1rem]`}
+                          >
+                            {desc}
+                          </p>
+                        </div>
+
+                        <div
+                          className={`w-full md:w-[55%] flex items-stretch `}
                         >
-                          {title}
-                        </h2>
-                        <p
-                          className={`${spaceGrotesk.className} font-[400] text-[1rem] `}
-                        >
-                          {desc}
-                        </p>
+                          <div
+                            className={`${libre.className} font-[500] text-[1rem] flex w-full uppercase`}
+                          >
+                            <div
+                              className={`w-1/3 bg-[#B4E2FF] flex items-center justify-center`}
+                            >
+                              <p className={`text-[#000000]`}>{work1}</p>
+                            </div>
+                            <div
+                              className={`w-1/3 bg-[#FCD0B9] flex items-center justify-center`}
+                            >
+                              <p className={`text-[#000000]`}>{work2}</p>
+                            </div>
+                            <div
+                              className={`w-1/3 bg-[#E7C0FF] flex items-center justify-center`}
+                            >
+                              <p className={`text-[#000000]`}>{work3}</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-
-                      <Image
-                        src={webdesignImage}
-                        alt=""
-                        width={0}
-                        height={0}
-                        className={`object-cover`}
-                      />
-                    </div>
-                  </div>
-                </Link>
-              )
-            )} */}
-
-            {workExamples.map(
-              ({ id, image, title, desc, webdesignImage }, index) => (
-                <Link key={id} href={`/our-work/${id}`}>
-                  <div
-                    className={`${
-                      index % 2 === 0 ? "md:ml-10" : "md:mr-10"
-                    } w-full flex flex-col items-center justify-between gap-2 mt-10`}
-                  >
-                    <div className="w-full">
-                      <Image
-                        src={image}
-                        alt="project image"
-                        width={0}
-                        height={0}
-                        className="w-full h-full md:h-[27rem] 2xl:h-[35rem]"
-                      />
-                    </div>
-
-                    <div className="w-full flex flex-col md:flex-row md:gap-10 items-center justify-between">
-                      <div className="flex flex-col">
-                        <h2
-                          className={`${libre.className} text-[#FF0000] font-[700] text-[2rem]`}
-                        >
-                          {title}
-                        </h2>
-                        <p
-                          className={`${spaceGrotesk.className} font-[400] text-[1rem]`}
-                        >
-                          {desc}
-                        </p>
-                      </div>
-
-                      <Image
-                        src={webdesignImage}
-                        alt=""
-                        width={0}
-                        height={0}
-                        className="object-cover"
-                      />
                     </div>
                   </div>
                 </Link>
               )
             )}
-
-            {/* {workExamples.map(
-              ({ id, image, title, desc, webdesignImage }, index) => (
-                <Link key={id} href={`/our-work/${id}`}>
-                  <div
-                    className={`${
-                      index % 2 === 0 ? "md:ml-10" : "md:mr-10"
-                    } w-full flex flex-col items-center justify-between gap-2 mt-10`}
-                  >
-                    <div className="w-full">
-                      <Image
-                        src={image}
-                        alt="project image"
-                        width={0}
-                        height={0}
-                        className="w-full h-full md:h-[27rem] 2xl:h-[35rem]"
-                      />
-                    </div>
-
-                    <div className="w-full flex flex-col md:flex-row md:gap-10 items-center justify-between">
-                      <div className="flex flex-col">
-                        <h2
-                          className={`${libre.className} text-[#FF0000] font-[700] text-[2rem]`}
-                        >
-                          {title}
-                        </h2>
-                        <p
-                          className={`${spaceGrotesk.className} font-[400] text-[1rem]`}
-                        >
-                          {desc}
-                        </p>
-                      </div>
-
-                      <Image
-                        src={webdesignImage}
-                        alt=""
-                        width={0}
-                        height={0}
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-                </Link>
-              )
-            )} */}
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
+
+// ${
+//   index % 2 === 0 ? "md:ml-10" : "md:mr-10"
+// }

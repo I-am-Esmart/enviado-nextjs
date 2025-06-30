@@ -17,28 +17,6 @@ const EnviadoNav = () => {
 
   const { handleCloseModal, handleOPenModal } = useModalContext()
 
-  const handleSendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    const response = await fetch("/api/resend", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        message: "You have a new contact form submission.",
-      }),
-    })
-
-    if (response.ok) {
-      console.log("Email sent successfully!")
-      handleCloseModal()
-    } else {
-      console.log("Failed to send email.")
-    }
-    e.currentTarget.reset()
-  }
-
   const { handleOPenNavDropdown, isNavDropdownOpen, handleCloseNavDropdown } =
     useUserContext()
 
@@ -90,7 +68,7 @@ const EnviadoNav = () => {
     <>
       <nav
         className={`w-full h-20 px-4 md:px-8 fixed top-0 left-0 z-20 flex items-center justify-between transition-all duration-100 ease-in-out ${
-          isScrolledY ? "bg-white shadow-md" : "bg-transparent"
+          isScrolledY ? "bg-[#010101f2]" : "bg-transparent"
         }`}
       >
         <div className={``}>
