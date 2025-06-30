@@ -1,37 +1,37 @@
-import { motion } from "framer-motion";
-import { libre, spaceGrotesk } from "@/utilities/customFonts";
-import Image from "next/image";
-import ArrowImage from "/public/assets/Arrow.png";
-import ButtonImage from "/public/assets/ButtonImage.png";
-import Link from "next/link";
-import { useModalContext } from "@/context/ModalContext";
+import { motion } from "framer-motion"
+import { libre, spaceGrotesk } from "@/utilities/customFonts"
+import Image from "next/image"
+import ArrowImage from "/public/assets/Arrow.png"
+import ButtonImage from "/public/assets/ButtonImage.png"
+import Link from "next/link"
+import { useModalContext } from "@/context/ModalContext"
 
 const HeroSection = () => {
   const threeTransition = {
     duration: 1,
     delay: 0.5,
     ease: [0, 0.71, 0.2, 1.01],
-  };
-  const threeInitial = { x: -100, opacity: 0 };
-  const threeAnimate = { x: 0, opacity: 1 };
+  }
+  const threeInitial = { x: -100, opacity: 0 }
+  const threeAnimate = { x: 0, opacity: 1 }
 
   const marketingTransition = {
     duration: 2,
     delay: 0.8,
     ease: [0, 0.71, 0.2, 1.01],
-  };
-  const marketingInitial = { opacity: 0 };
-  const marketingAnimate = { opacity: 1 };
+  }
+  const marketingInitial = { opacity: 0 }
+  const marketingAnimate = { opacity: 1 }
 
   const solutionTransition = {
     duration: 1,
     delay: 1,
     ease: [0, 0.71, 0.2, 1.01],
-  };
-  const solutionInitial = { x: 100, opacity: 0 };
-  const solutionAnimate = { x: 0, opacity: 1 };
+  }
+  const solutionInitial = { x: 100, opacity: 0 }
+  const solutionAnimate = { x: 0, opacity: 1 }
 
-  const { handleOPenModal } = useModalContext();
+  const { handleOPenModal } = useModalContext()
 
   return (
     <section
@@ -41,7 +41,7 @@ const HeroSection = () => {
         className={`w-full h-screen flex flex-col justify-center items-center`}
       >
         <div
-          className={`w-[90%] 2xl:w-[75%] h-screen flex flex-col justify-center items-center`}
+          className={`w-[90%] 2xl:w-[85%] h-screen flex flex-col justify-center items-center`}
         >
           <div
             className={`${libre.className} w-full pt-30 mx-auto text-white font-extrabold text-6xl md:w-[70%] 2xl:w-[70%] md:pt-40 md:text-[5rem] lg:text-[7rem]`}
@@ -133,7 +133,7 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default HeroSection;
+export default HeroSection
