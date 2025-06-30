@@ -193,7 +193,7 @@ const WhatWeDoSection = () => {
                   <h3
                     className={`${spaceGrotesk.className} font-medium text-[#FFFFFF] text-5xl md:text-7xl`}
                   >
-                    I
+                    A
                   </h3>
                 </div>
                 <h4
